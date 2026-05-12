@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr. Gracie — Smile Assessment</title>
+  <meta name="description" content="Answer four short questions and Dr. Gracie will personalize your oral care routine." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@1,500;1,600;1,700&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./style.css?v=4" />
+</head>
+<body class="page-quiz">
+
+  <!-- Promo bar -->
+  <div class="promo-bar">
+    <p>FREE Shipping on all orders over <strong>$70</strong> &nbsp;-&nbsp; <a href="#">Shop Now</a></p>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header" data-screen-label="03 Quiz">
+    <div class="container">
+      <a href="index.html" class="brand" aria-label="Dr. Gracie">
+        <img src="assets/img/logo.png" alt="dr-gracie-logo">
+      </a>
+
+      <nav class="primary-nav" aria-label="Primary">
+        <a href="index.html">Home</a><span class="nav-sep">|</span>
+        <a href="#">Match Sets</a><span class="nav-sep">|</span>
+        <a href="#">Ingredients</a><span class="nav-sep">|</span>
+        <a href="#">Our Story</a><span class="nav-sep">|</span>
+        <a href="name.html" class="active">Find Your Match</a>
+      </nav>
+
+      <button class="menu-toggle" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- QUIZ STAGE -->
+  <section class="stage stage-quiz" aria-label="Smile assessment quiz">
+    <!-- Background wave -->
+    <svg class="wave wave-quiz" viewBox="0 0 1920 600" preserveAspectRatio="none" aria-hidden="true">
+      <defs>
+        <linearGradient id="quizGradA" x1="0" x2="1" y1="0" y2="0">
+          <stop offset="0" stop-color="#0a4fb8" stop-opacity="0"/>
+          <stop offset="0.3" stop-color="#3a8cf5" stop-opacity=".75"/>
+          <stop offset="0.7" stop-color="#1a6fe0" stop-opacity=".75"/>
+          <stop offset="1" stop-color="#0a3a8c" stop-opacity="0"/>
+        </linearGradient>
+        <linearGradient id="quizGradB" x1="0" x2="1" y1="0" y2="0">
+          <stop offset="0" stop-color="#5fa9ff" stop-opacity="0"/>
+          <stop offset="0.5" stop-color="#5fa9ff" stop-opacity=".55"/>
+          <stop offset="1" stop-color="#1758c7" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+      <g class="wave-group">
+        <path class="ribbon r1" d="M-50,520 C260,360 540,560 780,460 C920,400 980,520 1100,540" stroke="url(#quizGradA)" stroke-width="18" fill="none" stroke-linecap="round"/>
+        <path class="ribbon r2" d="M-50,560 C280,400 560,580 800,480 C940,420 1000,540 1120,560" stroke="url(#quizGradB)" stroke-width="10" fill="none" stroke-linecap="round"/>
+        <path class="ribbon r3" d="M-50,480 C240,320 520,540 760,440 C900,380 960,500 1080,520" stroke="url(#quizGradB)" stroke-width="6" fill="none" stroke-linecap="round" opacity=".7"/>
+      </g>
+    </svg>
+
+    <!-- Soft pale circle (echo of hero) -->
+    <div class="quiz-circle" aria-hidden="true"></div>
+
+    <div class="container quiz-container">
+
+      <!-- Progress card -->
+      <div class="progress-card" id="progressCard">
+        <div class="progress-head">
+          <div class="progress-label">
+            <span id="progressLabel">Question 01</span>
+          </div>
+          <button type="button" class="progress-back" id="progressBack" aria-label="Go to previous question">
+            Go Back
+          </button>
+        </div>
+        <div class="progress-bar-wrap">
+          <div class="progress-bar-track">
+            <div class="progress-bar-fill" id="progressFill"></div>
+          </div>
+          <div class="progress-badge" id="progressBadge">
+            <span id="progressBadgeText">25%</span>
+            <span class="progress-badge-tail" aria-hidden="true"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="quiz-grid">
+        <!-- Doctor portrait -->
+        <div class="quiz-portrait" aria-hidden="true">
+          <div class="portrait-float portrait-float--left">
+            <img src="assets/img/question-gracie-02.png" alt="" />
+          </div>
+        </div>
+
+        <!-- Question stack -->
+        <div class="quiz-content">
+          <div class="quiz-stage" id="quizStage" aria-live="polite">
+            <!-- Question slides injected by JS -->
+          </div>
+
+          <div class="quiz-footer">
+            <button type="button" class="btn-pill btn-primary quiz-next" id="quizNext" disabled>
+              <span class="btn-label" id="quizNextLabel">Next Question</span>
+              <span class="btn-sheen" aria-hidden="true"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER / WAITLIST -->
+  <footer class="site-footer">
+    <div class="container footer-top">
+      <div class="waitlist-copy">
+        <h2 class="waitlist-title">Be among the first 500.</h2>
+        <p class="waitlist-sub">
+          We're launching mid-April 2026. Join early access for first-in-line
+          ordering, a founder note from Dr. Gracie, and 15% off your first
+          Match Set — permanently locked in.
+        </p>
+      </div>
+      <form class="waitlist-form" id="waitlistForm" novalidate>
+        <div class="waitlist-field">
+          <input type="email" id="email" placeholder="enteryouremail@name.com" required aria-label="Email address" autocomplete="email" />
+          <button type="submit" class="btn-pill btn-primary waitlist-btn">Join Waitlist</button>
+        </div>
+        <p class="waitlist-note" id="waitlistNote">No spam. Ever. Just an email when we're live.</p>
+      </form>
+    </div>
+
+    <div class="container footer-divider"></div>
+
+    <div class="container footer-cols">
+      <div class="footer-logo">
+        <img src="assets/img/logo-white.png" alt="dr-gracie-logo-footer">
+      </div>
+
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><span class="bullet"></span><a href="index.html">Home</a></li>
+          <li><span class="bullet"></span><a href="#">Match Sets</a></li>
+          <li><span class="bullet"></span><a href="#">Ingredients</a></li>
+          <li><span class="bullet"></span><a href="#">Our Story</a></li>
+          <li><span class="bullet"></span><a href="quiz.html">Find Your Match</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Important Links</h4>
+        <ul>
+          <li><span class="bullet"></span><a href="#">Ingredients</a></li>
+          <li><span class="bullet"></span><a href="#">Compliance</a></li>
+          <li><span class="bullet"></span><a href="#">Returns</a></li>
+          <li><span class="bullet"></span><a href="#">Contact</a></li>
+          <li><span class="bullet"></span><a href="#">Privacy</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Follow Us On</h4>
+        <ul class="social-list">
+          <li><a href="#">Facebook<span class="arrow">↗</span></a></li>
+          <li><a href="#">Instagram<span class="arrow">↗</span></a></li>
+          <li><a href="#">Twitter<span class="arrow">↗</span></a></li>
+          <li><a href="#">Tik Tok<span class="arrow">↗</span></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container footer-divider"></div>
+
+    <div class="container footer-base">
+      <p>©2026, <strong>Dr Gracie</strong> All Rights Reserved.</p>
+      <a href="#">Legal Documents</a>
+    </div>
+  </footer>
+
+  <!-- Questions data -->
+  <script type="application/json" id="quiz-data">
+  {
+    "questions": [
+      {
+        "id": "concern",
+        "title": "What's your biggest oral concern right now?",
+        "options": [
+          { "id": "breath", "title": "Breath & Freshness", "sub": "Worried about bad breath or odor that don't go away.", "kit": "fresh" },
+          { "id": "gums",   "title": "Gum Health",         "sub": "Bleeding when flossing or gum sensitivity",      "kit": "gum"   },
+          { "id": "white",  "title": "Brighter Teeth",     "sub": "Dull enamel or surface staining",                "kit": "bright"},
+          { "id": "sens",   "title": "Sensitivity & Protection", "sub": "Cold water hurts or enamel feels thin",   "kit": "sens"  }
+        ]
+      },
+      {
+        "id": "frequency",
+        "title": "How often do you brush each day?",
+        "options": [
+          { "id": "once",  "title": "Once a day",          "sub": "Usually in the morning or before bed.",          "kit": "gum"   },
+          { "id": "twice", "title": "Twice a day",         "sub": "Morning and night — the classic rhythm.",        "kit": "bright"},
+          { "id": "after", "title": "After every meal",    "sub": "Three or more times — you're meticulous.",       "kit": "fresh" },
+          { "id": "varies","title": "It varies",           "sub": "Honestly, some days slip by.",                   "kit": "sens"  }
+        ]
+      },
+      {
+        "id": "sensitivity",
+        "title": "How would you describe your sensitivity?",
+        "options": [
+          { "id": "none",  "title": "None",                "sub": "Cold and hot don't bother me at all.",           "kit": "bright"},
+          { "id": "mild",  "title": "Mild",                "sub": "Slight tingle on ice or hot drinks.",            "kit": "fresh" },
+          { "id": "mod",   "title": "Moderate",            "sub": "Cold water hurts, brushing feels sharp.",        "kit": "sens"  },
+          { "id": "high",  "title": "High",                "sub": "Pain even with lukewarm food.",                  "kit": "gum"   }
+        ]
+      },
+      {
+        "id": "goal",
+        "title": "What's your top priority right now?",
+        "options": [
+          { "id": "fresh", "title": "Fresh, confident breath","sub": "All day, no afternoon slump.",               "kit": "fresh" },
+          { "id": "heal",  "title": "Heal & strengthen gums","sub": "Restore the foundation.",                     "kit": "gum"   },
+          { "id": "white", "title": "A brighter smile",      "sub": "Visible lift in tone, gently.",               "kit": "bright"},
+          { "id": "calm",  "title": "Calm sensitivity",      "sub": "Comfort, finally.",                            "kit": "sens"  }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="./script.js?v=4"></script>
+</body>
+</html>

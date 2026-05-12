@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr. Gracie — Your Personalized Smile Routine</title>
+  <meta name="description" content="Your personalized oral care routine, recommended by Dr. Gracie based on your answers." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@1,500;1,600;1,700&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./style.css?v=5" />
+</head>
+<body class="page-result">
+
+  <!-- Promo bar -->
+  <div class="promo-bar">
+    <p>FREE Shipping on all orders over <strong>$70</strong> &nbsp;-&nbsp; <a href="#">Shop Now</a></p>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header" data-screen-label="04 Result">
+    <div class="container">
+      <a href="index.html" class="brand" aria-label="Dr. Gracie">
+        <img src="assets/img/logo.png" alt="dr-gracie-logo">
+      </a>
+      <nav class="primary-nav" aria-label="Primary">
+        <a href="index.html">Home</a><span class="nav-sep">|</span>
+        <a href="#">Match Sets</a><span class="nav-sep">|</span>
+        <a href="#">Ingredients</a><span class="nav-sep">|</span>
+        <a href="#">Our Story</a><span class="nav-sep">|</span>
+        <a href="name.html">Find Your Match</a>
+      </nav>
+      <button class="menu-toggle" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- RESULT HERO -->
+  <section class="stage stage-result" aria-label="Your personalized smile profile">
+    <div class="result-circle" aria-hidden="true"></div>
+
+    <div class="container result-hero">
+      <!-- Doctor side -->
+      <div class="result-doctor">
+        <div class="portrait-float portrait-float--left">
+          <img id="resultDoctor" src="assets/img/result-gracie-01.png" alt="Dr. Gracie introducing your personalized routine" />
+        </div>
+      </div>
+
+      <!-- Copy side -->
+      <div class="result-copy">
+        <div class="eyebrow eyebrow-gold">
+          <span class="eyebrow-line"></span>
+          <span>Your Smile Profile</span>
+        </div>
+        <h1 class="result-title">
+          <span class="result-title-line">Based on Your Answers</span>
+          <span class="result-title-kit" id="kitName">The Brightness Kit</span>
+        </h1>
+        <p class="result-body" id="kitBody">
+          your routine needs to address the root cause of breath issues —
+          which starts with gum health and microbiome balance, not just
+          masking. This three-step system targets the source.
+        </p>
+        <div class="result-badge">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M9 12.5l2 2 4-4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="12" cy="12" r="9.25" stroke="currentColor" stroke-width="1.4" opacity=".5"/>
+          </svg>
+          <span>Recommended by Dr. Gracie based on your answers</span>
+        </div>
+      </div>
+
+      <!-- Products still life -->
+      <div class="result-products">
+        <img src="assets/img/product-result.png" alt="The Brightness Kit — toothpaste, brush and mint serum" />
+      </div>
+    </div>
+  </section>
+
+  <!-- 3-STEP PRODUCT GRID -->
+  <section class="stage stage-steps" aria-label="Your three-step routine">
+    <div class="container">
+      <div class="steps-head">
+        <div class="eyebrow eyebrow-gold">
+          <span class="eyebrow-line"></span>
+          <span>Your Personalized Routine</span>
+        </div>
+        <h2 class="steps-title">
+          <span>Three steps.</span>
+          <span>Built for your breath &amp; gums.</span>
+        </h2>
+      </div>
+
+      <div class="steps-grid" id="stepsGrid">
+        <article class="step-card" data-step="1">
+          <div class="step-card-top">
+            <div class="step-meta">
+              <p class="step-label">STEP · 01</p>
+              <h3 class="step-name">CLEAN</h3>
+              <p class="step-tagline">Gum Reset Toothpaste</p>
+            </div>
+            <div class="step-image">
+              <img src="assets/img/toothpaste.png" alt="Soft Mint Milk clean toothpaste" />
+            </div>
+          </div>
+          <div class="step-card-body">
+            <p class="step-headline">Soft Mint Milk Toothpaste + Ultra-Soft Toothbrush</p>
+            <p class="step-desc">Zinc citrate at maximum 1% and xylitol at 10% support a balanced oral environment and freshness from the source — not a temporary mask.</p>
+          </div>
+          <div class="step-card-foot">
+            <div class="step-price">
+              <span class="price-amount">$48</span>
+              <span class="price-sub">or subscribe &amp; save 15%</span>
+            </div>
+            <button type="button" class="btn-ghost step-shop">
+              <span>Shop Set</span>
+              <span class="shop-arrow" aria-hidden="true">→</span>
+            </button>
+          </div>
+        </article>
+
+        <article class="step-card" data-step="2">
+          <div class="step-card-top">
+            <div class="step-meta">
+              <p class="step-label">STEP · 02</p>
+              <h3 class="step-name">TREAT</h3>
+              <p class="step-tagline">Calm Mint Mouth Serum</p>
+            </div>
+            <div class="step-image">
+              <img src="assets/img/mouth-serum.png" alt="Calm Mint Mouth Serum" />
+            </div>
+          </div>
+          <div class="step-card-body">
+            <p class="step-headline">15ml leave-on night treatment · do not rinse</p>
+            <p class="step-desc">Zinc PCA emphasized overnight for antimicrobial and breath support. Gum issues and bad breath are worst in the morning — this is why the serum is the most important product in your set.</p>
+          </div>
+          <div class="step-card-foot">
+            <div class="step-price">
+              <span class="price-amount">$48</span>
+              <span class="price-sub">or subscribe &amp; save 15%</span>
+            </div>
+            <button type="button" class="btn-ghost step-shop">
+              <span>Shop Set</span>
+              <span class="shop-arrow" aria-hidden="true">→</span>
+            </button>
+          </div>
+        </article>
+
+        <article class="step-card" data-step="3">
+          <div class="step-card-top">
+            <div class="step-meta">
+              <p class="step-label">STEP · 03</p>
+              <h3 class="step-name">BALANCE</h3>
+              <p class="step-tagline">Oral Probiotic</p>
+            </div>
+            <div class="step-image">
+              <img src="assets/img/oral-probiotic.png" alt="Oral probiotic" />
+            </div>
+          </div>
+          <div class="step-card-body">
+            <p class="step-headline">Daily oral microbiome support</p>
+            <p class="step-desc">A once-a-day probiotic that re-seeds beneficial bacteria. Helps maintain freshness, gum comfort, and a balanced environment between brushings.</p>
+          </div>
+          <div class="step-card-foot">
+            <div class="step-price">
+              <span class="price-amount">$48</span>
+              <span class="price-sub">or subscribe &amp; save 15%</span>
+            </div>
+            <button type="button" class="btn-ghost step-shop">
+              <span>Shop Set</span>
+              <span class="shop-arrow" aria-hidden="true">→</span>
+            </button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- BEST VALUE PANEL -->
+  <section class="stage stage-bestvalue" aria-label="Complete routine — best value">
+    <div class="container bv-grid">
+      <div class="bv-copy">
+        <div class="bv-pill">BEST VALUE · COMPLETE ROUTINE</div>
+        <h2 class="bv-title">
+          <span>Three steps.</span>
+          <span>Built for your breath &amp; gums.</span>
+        </h2>
+        <p class="bv-body">
+          All three steps matched to your breath and gum concern.
+          Clean, Treat, and Balance together for results that last past lunchtime.
+        </p>
+        <button type="button" class="btn-pill btn-dark bv-cta">
+          <span class="btn-label">Start My Personalized Routine</span>
+          <span class="btn-sheen" aria-hidden="true"></span>
+        </button>
+      </div>
+      <div class="bv-image">
+        <img src="assets/img/set-01.jpg" alt="Complete routine — Brightness Kit on display" />
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER / WAITLIST -->
+  <footer class="site-footer">
+    <div class="container footer-top">
+      <div class="waitlist-copy">
+        <h2 class="waitlist-title">Be among the first 500.</h2>
+        <p class="waitlist-sub">
+          We're launching mid-April 2026. Join early access for first-in-line
+          ordering, a founder note from Dr. Gracie, and 15% off your first
+          Match Set — permanently locked in.
+        </p>
+      </div>
+      <form class="waitlist-form" id="waitlistForm" novalidate>
+        <div class="waitlist-field">
+          <input type="email" id="email" placeholder="enteryouremail@name.com" required aria-label="Email address" autocomplete="email" />
+          <button type="submit" class="btn-pill btn-primary waitlist-btn">Join Waitlist</button>
+        </div>
+        <p class="waitlist-note" id="waitlistNote">No spam. Ever. Just an email when we're live.</p>
+      </form>
+    </div>
+
+    <div class="container footer-divider"></div>
+
+    <div class="container footer-cols">
+      <div class="footer-logo">
+        <img src="assets/img/logo-white.png" alt="dr-gracie-logo-footer">
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><span class="bullet"></span><a href="index.html">Home</a></li>
+          <li><span class="bullet"></span><a href="#">Match Sets</a></li>
+          <li><span class="bullet"></span><a href="#">Ingredients</a></li>
+          <li><span class="bullet"></span><a href="#">Our Story</a></li>
+          <li><span class="bullet"></span><a href="quiz.html">Find Your Match</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Important Links</h4>
+        <ul>
+          <li><span class="bullet"></span><a href="#">Ingredients</a></li>
+          <li><span class="bullet"></span><a href="#">Compliance</a></li>
+          <li><span class="bullet"></span><a href="#">Returns</a></li>
+          <li><span class="bullet"></span><a href="#">Contact</a></li>
+          <li><span class="bullet"></span><a href="#">Privacy</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Follow Us On</h4>
+        <ul class="social-list">
+          <li><a href="#">Facebook<span class="arrow">↗</span></a></li>
+          <li><a href="#">Instagram<span class="arrow">↗</span></a></li>
+          <li><a href="#">Twitter<span class="arrow">↗</span></a></li>
+          <li><a href="#">Tik Tok<span class="arrow">↗</span></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container footer-divider"></div>
+
+    <div class="container footer-base">
+      <p>©2026, <strong>Dr Gracie</strong> All Rights Reserved.</p>
+      <a href="#">Legal Documents</a>
+    </div>
+  </footer>
+
+  <!-- Kit data -->
+  <script type="application/json" id="kit-data">
+  {
+    "fresh":  { "name": "The Freshness Kit",   "body": "your routine needs to address the root cause of breath issues — which starts with gum health and microbiome balance, not just masking. This three-step system targets the source." },
+    "gum":    { "name": "The Gum Reset Kit",   "body": "your gums are asking for restoration, not aggression. We pair a gentle reset toothpaste with a leave-on serum and a daily probiotic to rebuild the foundation." },
+    "bright": { "name": "The Brightness Kit",  "body": "your enamel needs polish without abrasion — a gentle remineralizing system that lifts tone over weeks while keeping the surface intact." },
+    "sens":   { "name": "The Sensitivity Kit", "body": "your enamel needs comfort and rebuild. Hydroxyapatite-led formulas seal exposed channels gradually so cold and brushing stop hurting." }
+  }
+  </script>
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="./script.js?v=5"></script>
+</body>
+</html>
