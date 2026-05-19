@@ -848,6 +848,576 @@
   
 
   /* ============================================================
+     6e. HOMEPAGE — hero, scroll-driven reveals, ambient motion
+     ============================================================ */
+  function homepageScreen() {
+    const page = document.querySelector('.page-home');
+    if (!page) return;
+
+    /* ---- Hero entrance ---- */
+    const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+    tl.from('.promo-bar', { y: -30, opacity: 0, duration: 0.6 }, 0);
+    tl.from('.site-header .brand', { y: -16, opacity: 0, duration: 0.7 }, 0.1);
+    tl.from('.primary-nav a', { y: -10, opacity: 0, duration: 0.5, stagger: 0.06 }, 0.15);
+
+    // Soft circle bloom
+    gsap.set('.home-hero-circle', { scale: 0.85, opacity: 0, filter: 'blur(20px)' });
+    tl.to('.home-hero-circle', {
+      scale: 1, opacity: 1, filter: 'blur(0px)',
+      duration: 1.6, ease: 'power2.out',
+    }, 0.1);
+
+    // Hero copy stagger w/ blur lift
+    const heroEls = [
+      '.home-hero-copy .eyebrow',
+      '.home-hero-title .hl-line:first-child',
+      '.home-hero-title .hl-italic',
+      '.home-hero-title .hl-line:last-child',
+      '.home-hero-sub',
+      '.home-hero-actions',
+      '.home-hero .hero-bullets',
+    ];
+    heroEls.forEach((sel) => gsap.set(sel, { y: 22, opacity: 0, filter: 'blur(10px)' }));
+    tl.to(heroEls, {
+      y: 0, opacity: 1, filter: 'blur(0px)',
+      duration: 0.85, stagger: 0.09,
+    }, 0.4);
+    // Italic word — tracking reveal
+    tl.fromTo('.home-hero-title .hl-italic',
+      { letterSpacing: '0.06em' },
+      { letterSpacing: '-0.005em', duration: 1.2, ease: 'power3.out' },
+      0.65);
+
+    // Product still life — rise + scale + blur
+    gsap.set('.home-hero-products-inner', { y: 50, scale: 0.94, opacity: 0, filter: 'blur(12px)' });
+    tl.to('.home-hero-products-inner', {
+      y: 0, scale: 1, opacity: 1, filter: 'blur(0px)',
+      duration: 1.3, ease: 'power3.out',
+    }, 0.5);
+
+    /* ---- Ambient motion ---- */
+    gsap.to('.home-hero-products-inner', {
+      y: -10, duration: 5, ease: 'sine.inOut',
+      yoyo: true, repeat: -1, delay: 1.8,
+    });
+    gsap.to('.home-hero-circle', {
+      scale: 1.04, duration: 8, ease: 'sine.inOut',
+      yoyo: true, repeat: -1, delay: 2,
+    });
+    gsap.to('.swirl-img', {
+      rotation: '+=360', duration: 60, ease: 'none', repeat: -1,
+    });
+    gsap.to('.ingredients-products img', {
+      y: -10, duration: 5.5, ease: 'sine.inOut',
+      yoyo: true, repeat: -1, delay: 2,
+    });
+
+    /* ---- Hero CTA sheen + magnetic ---- */
+    const cta = document.getElementById('homeCtaA');
+    if (cta) {
+      const sheen = cta.querySelector('.btn-sheen');
+      const sheenLoop = () => {
+        gsap.fromTo(sheen,
+          { x: '-150%' },
+          { x: '250%', duration: 1.5, ease: 'power2.inOut',
+            onComplete: () => gsap.delayedCall(2.8, sheenLoop) });
+      };
+      gsap.delayedCall(2.0, sheenLoop);
+
+      const label = cta.querySelector('.btn-label');
+      cta.addEventListener('mousemove', (e) => {
+        const r = cta.getBoundingClientRect();
+        const cx = (e.clientX - r.left) / r.width - 0.5;
+        const cy = (e.clientY - r.top) / r.height - 0.5;
+        gsap.to(cta, { x: cx * 10, y: cy * 5, duration: 0.4, ease: 'power3.out' });
+        gsap.to(label, { x: cx * 5, y: cy * 3, duration: 0.4, ease: 'power3.out' });
+      });
+      cta.addEventListener('mouseleave', () => {
+        gsap.to([cta, label], { x: 0, y: 0, duration: 0.6, ease: 'elastic.out(1, 0.4)' });
+      });
+    }
+
+    /* ---- ScrollTrigger reveals ---- */
+    if (!window.ScrollTrigger) return;
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Oral concern
+    gsap.from('.home-concern-copy > .eyebrow, .home-concern-title, .home-concern-sub', {
+      y: 28, opacity: 0, filter: 'blur(10px)',
+      duration: 0.9, stagger: 0.12, ease: 'power3.out',
+      scrollTrigger: { trigger: '.home-concern', start: 'top 75%', once: true },
+    });
+    gsap.from('.concern-card', {
+      y: 30, opacity: 0, filter: 'blur(8px)',
+      duration: 0.8, stagger: 0.14, ease: 'power3.out',
+      scrollTrigger: { trigger: '.concern-stack', start: 'top 80%', once: true },
+    });
+    gsap.from('.home-concern-photo img', {
+      scale: 1.12, opacity: 0,
+      duration: 1.4, ease: 'power3.out',
+      scrollTrigger: { trigger: '.home-concern', start: 'top 70%', once: true },
+    });
+
+    // Match sets
+    gsap.from('.sets-head > *', {
+      y: 28, opacity: 0, filter: 'blur(8px)',
+      duration: 0.9, stagger: 0.12, ease: 'power3.out',
+      scrollTrigger: { trigger: '.sets-head', start: 'top 80%', once: true },
+    });
+    gsap.from('.set-card', {
+      y: 50, opacity: 0, scale: 0.96, filter: 'blur(8px)',
+      duration: 1.0, stagger: 0.15, ease: 'power3.out',
+      scrollTrigger: { trigger: '.sets-grid', start: 'top 80%', once: true },
+    });
+
+    // Founder
+    gsap.from('.founder-portrait', {
+      x: -40, opacity: 0, filter: 'blur(12px)',
+      duration: 1.2, ease: 'power3.out',
+      scrollTrigger: { trigger: '.home-founder', start: 'top 70%', once: true },
+    });
+    gsap.from('.founder-copy > *', {
+      y: 24, opacity: 0, filter: 'blur(10px)',
+      duration: 0.8, stagger: 0.11, ease: 'power3.out',
+      scrollTrigger: { trigger: '.home-founder', start: 'top 70%', once: true },
+    });
+    gsap.from('.founder-swirl', {
+      x: 40, opacity: 0, scale: 0.9,
+      duration: 1.2, ease: 'power3.out',
+      scrollTrigger: { trigger: '.home-founder', start: 'top 70%', once: true },
+    });
+    // Founder arcs draw-in
+    document.querySelectorAll('.founder-arc path').forEach((p) => {
+      const len = p.getTotalLength ? p.getTotalLength() : 1200;
+      gsap.set(p, { strokeDasharray: len, strokeDashoffset: len });
+      gsap.to(p, {
+        strokeDashoffset: 0,
+        duration: 2.2,
+        ease: 'power2.inOut',
+        scrollTrigger: { trigger: '.home-founder', start: 'top 70%', once: true },
+      });
+    });
+
+    // Ingredients
+    gsap.from('.ingredients-products img', {
+      x: -40, opacity: 0, scale: 0.94, filter: 'blur(10px)',
+      duration: 1.2, ease: 'power3.out',
+      scrollTrigger: { trigger: '.home-ingredients', start: 'top 70%', once: true },
+    });
+    gsap.from('.ingredients-content .eyebrow, .ingredients-title', {
+      y: 26, opacity: 0, filter: 'blur(10px)',
+      duration: 0.9, stagger: 0.12, ease: 'power3.out',
+      scrollTrigger: { trigger: '.home-ingredients', start: 'top 70%', once: true },
+    });
+    gsap.from('.ingredient-card', {
+      y: 30, opacity: 0, scale: 0.97,
+      duration: 0.8, stagger: 0.1, ease: 'power3.out',
+      scrollTrigger: { trigger: '.ingredients-grid', start: 'top 80%', once: true },
+    });
+    gsap.from('.ingredient-chips li', {
+      y: 14, opacity: 0,
+      duration: 0.5, stagger: 0.05, ease: 'power3.out',
+      scrollTrigger: { trigger: '.ingredient-chips', start: 'top 90%', once: true },
+    });
+    gsap.from('.home-ingredients-watermark', {
+      opacity: 0, scale: 0.9,
+      duration: 1.4, ease: 'power2.out',
+      scrollTrigger: { trigger: '.home-ingredients', start: 'top 70%', once: true },
+    });
+
+    // Why
+    gsap.from('.why-head > *', {
+      y: 22, opacity: 0, filter: 'blur(8px)',
+      duration: 0.8, stagger: 0.12, ease: 'power3.out',
+      scrollTrigger: { trigger: '.home-why', start: 'top 75%', once: true },
+    });
+    gsap.from('.why-card', {
+      y: 40, opacity: 0, scale: 0.96, filter: 'blur(8px)',
+      duration: 0.9, stagger: 0.1, ease: 'power3.out',
+      scrollTrigger: { trigger: '.why-grid', start: 'top 80%', once: true },
+    });
+
+    // 3D mousemove tilt on set cards
+    document.querySelectorAll('.set-card, .ingredient-card').forEach((card) => {
+      card.addEventListener('mousemove', (e) => {
+        const r = card.getBoundingClientRect();
+        const cx = (e.clientX - r.left) / r.width - 0.5;
+        const cy = (e.clientY - r.top) / r.height - 0.5;
+        gsap.to(card, {
+          rotationX: cy * -3,
+          rotationY: cx * 4,
+          transformPerspective: 900,
+          duration: 0.5,
+          ease: 'power3.out',
+        });
+      });
+      card.addEventListener('mouseleave', () => {
+        gsap.to(card, { rotationX: 0, rotationY: 0, duration: 0.8, ease: 'power3.out' });
+      });
+    });
+  }
+
+  /* ============================================================
+     6f. MATCH SET, INGREDIENTS, OUR STORY pages
+     ============================================================ */
+  function pageHeroIntros() {
+    // Generic page-header animation for promo/header on inner pages
+    const inner = document.querySelector(
+      '.page-matchset, .page-ingredients, .page-story'
+    );
+    if (!inner) return;
+
+    gsap.from('.promo-bar', { y: -30, opacity: 0, duration: 0.6, ease: 'power3.out' });
+    gsap.from('.site-header .brand', { y: -16, opacity: 0, duration: 0.7, ease: 'power3.out', delay: 0.1 });
+    gsap.from('.primary-nav a', { y: -10, opacity: 0, duration: 0.5, stagger: 0.06, ease: 'power3.out', delay: 0.15 });
+  }
+
+  function matchSetPage() {
+    if (!document.querySelector('.page-matchset')) return;
+
+    /* Hero entrance */
+    const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+
+    gsap.set('.ms-hero-circle', { scale: 0.85, opacity: 0, filter: 'blur(20px)' });
+    tl.to('.ms-hero-circle', { scale: 1, opacity: 1, filter: 'blur(0px)', duration: 1.6 }, 0.1);
+
+    const heroEls = [
+      '.ms-breadcrumb',
+      '.ms-hero-copy .eyebrow',
+      '.ms-hero-title span:first-child',
+      '.ms-hero-title .hl-italic',
+      '.ms-hero-sub',
+      '.ms-hero-pricing',
+      '.ms-hero-actions',
+      '.ms-attributes',
+    ];
+    heroEls.forEach((sel) => gsap.set(sel, { y: 22, opacity: 0, filter: 'blur(10px)' }));
+    tl.to(heroEls, { y: 0, opacity: 1, filter: 'blur(0px)', duration: 0.8, stagger: 0.08 }, 0.4);
+
+    gsap.set('.ms-hero-product img', { y: 40, scale: 0.95, opacity: 0, filter: 'blur(10px)' });
+    tl.to('.ms-hero-product img', { y: 0, scale: 1, opacity: 1, filter: 'blur(0px)', duration: 1.3 }, 0.5);
+
+    // Ambient
+    gsap.to('.ms-hero-product img', { y: -10, duration: 5, ease: 'sine.inOut', yoyo: true, repeat: -1, delay: 1.8 });
+    gsap.to('.ms-hero-circle', { scale: 1.04, duration: 8, ease: 'sine.inOut', yoyo: true, repeat: -1, delay: 2 });
+
+    /* CTA sheen + magnetic */
+    const cta = document.getElementById('msCta');
+    if (cta) {
+      const sheen = cta.querySelector('.btn-sheen');
+      const loop = () => {
+        if (!sheen) return;
+        gsap.fromTo(sheen, { x: '-150%' }, {
+          x: '250%', duration: 1.5, ease: 'power2.inOut',
+          onComplete: () => gsap.delayedCall(2.8, loop),
+        });
+      };
+      gsap.delayedCall(2, loop);
+
+      const label = cta.querySelector('.btn-label');
+      cta.addEventListener('mousemove', (e) => {
+        const r = cta.getBoundingClientRect();
+        const cx = (e.clientX - r.left) / r.width - 0.5;
+        const cy = (e.clientY - r.top) / r.height - 0.5;
+        gsap.to(cta, { x: cx * 10, y: cy * 5, duration: 0.4, ease: 'power3.out' });
+        gsap.to(label, { x: cx * 5, y: cy * 3, duration: 0.4, ease: 'power3.out' });
+      });
+      cta.addEventListener('mouseleave', () => {
+        gsap.to([cta, label], { x: 0, y: 0, duration: 0.6, ease: 'elastic.out(1, 0.4)' });
+      });
+    }
+
+    if (!window.ScrollTrigger) return;
+
+    // Included products
+    gsap.from('.ms-included .sets-head > *', {
+      y: 24, opacity: 0, filter: 'blur(8px)',
+      duration: 0.8, stagger: 0.1, ease: 'power3.out',
+      scrollTrigger: { trigger: '.ms-included', start: 'top 80%', once: true },
+    });
+    gsap.from('.ms-product-card', {
+      y: 40, opacity: 0, scale: 0.96, filter: 'blur(8px)',
+      duration: 0.9, stagger: 0.12, ease: 'power3.out',
+      scrollTrigger: { trigger: '.ms-products-grid', start: 'top 78%', once: true },
+    });
+
+    // Routine timeline
+    gsap.from('.ms-routine-copy > *', {
+      y: 22, opacity: 0, filter: 'blur(8px)',
+      duration: 0.8, stagger: 0.1, ease: 'power3.out',
+      scrollTrigger: { trigger: '.ms-routine', start: 'top 75%', once: true },
+    });
+    gsap.from('.ms-routine-steps li', {
+      x: 30, opacity: 0, filter: 'blur(8px)',
+      duration: 0.7, stagger: 0.14, ease: 'power3.out',
+      scrollTrigger: { trigger: '.ms-routine-steps', start: 'top 78%', once: true },
+    });
+
+    // Results
+    gsap.from('.ms-results-image', {
+      x: -30, opacity: 0, scale: 0.96,
+      duration: 1.1, ease: 'power3.out',
+      scrollTrigger: { trigger: '.ms-results', start: 'top 75%', once: true },
+    });
+    gsap.from('.ms-results-copy > *', {
+      y: 24, opacity: 0, filter: 'blur(10px)',
+      duration: 0.9, stagger: 0.1, ease: 'power3.out',
+      scrollTrigger: { trigger: '.ms-results', start: 'top 70%', once: true },
+    });
+
+    // Other sets
+    gsap.from('.ms-other .sets-head > *', {
+      y: 22, opacity: 0, filter: 'blur(8px)',
+      duration: 0.8, stagger: 0.1, ease: 'power3.out',
+      scrollTrigger: { trigger: '.ms-other', start: 'top 80%', once: true },
+    });
+    gsap.from('.ms-other .set-card', {
+      y: 40, opacity: 0, scale: 0.96,
+      duration: 0.9, stagger: 0.12, ease: 'power3.out',
+      scrollTrigger: { trigger: '.ms-other .sets-grid', start: 'top 80%', once: true },
+    });
+
+    // 3D tilt on product cards
+    document.querySelectorAll('.ms-product-card, .ms-other .set-card').forEach((card) => {
+      card.addEventListener('mousemove', (e) => {
+        const r = card.getBoundingClientRect();
+        const cx = (e.clientX - r.left) / r.width - 0.5;
+        const cy = (e.clientY - r.top) / r.height - 0.5;
+        gsap.to(card, {
+          rotationX: cy * -3, rotationY: cx * 4,
+          transformPerspective: 900, duration: 0.5, ease: 'power3.out',
+        });
+      });
+      card.addEventListener('mouseleave', () => {
+        gsap.to(card, { rotationX: 0, rotationY: 0, duration: 0.8, ease: 'power3.out' });
+      });
+    });
+  }
+
+  function ingredientsPage() {
+    if (!document.querySelector('.page-ingredients')) return;
+
+    /* Hero entrance */
+    const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+
+    gsap.set('.ing-hero-circle', { scale: 0.85, opacity: 0, filter: 'blur(20px)' });
+    tl.to('.ing-hero-circle', { scale: 1, opacity: 1, filter: 'blur(0px)', duration: 1.6 }, 0.1);
+
+    const els = [
+      '.ing-hero-copy .eyebrow',
+      '.ing-hero-title span:first-child',
+      '.ing-hero-title .hl-italic',
+      '.ing-hero-sub',
+      '.ing-hero-actions',
+    ];
+    els.forEach((sel) => gsap.set(sel, { y: 22, opacity: 0, filter: 'blur(10px)' }));
+    tl.to(els, { y: 0, opacity: 1, filter: 'blur(0px)', duration: 0.85, stagger: 0.1 }, 0.4);
+
+    gsap.set('.ing-hero-image img', { y: 40, scale: 0.95, opacity: 0, filter: 'blur(10px)' });
+    tl.to('.ing-hero-image img', { y: 0, scale: 1, opacity: 1, filter: 'blur(0px)', duration: 1.3 }, 0.55);
+
+    gsap.to('.ing-hero-image img', { y: -10, duration: 5, ease: 'sine.inOut', yoyo: true, repeat: -1, delay: 2 });
+    gsap.to('.ing-hero-circle', { scale: 1.04, duration: 8, ease: 'sine.inOut', yoyo: true, repeat: -1, delay: 2 });
+
+    if (!window.ScrollTrigger) return;
+
+    gsap.from('.ing-philo-card', {
+      y: 30, opacity: 0, scale: 0.97,
+      duration: 0.8, stagger: 0.12, ease: 'power3.out',
+      scrollTrigger: { trigger: '.ing-philosophy', start: 'top 80%', once: true },
+    });
+
+    gsap.from('.ing-core .sets-head > *', {
+      y: 22, opacity: 0, filter: 'blur(8px)',
+      duration: 0.8, stagger: 0.1, ease: 'power3.out',
+      scrollTrigger: { trigger: '.ing-core', start: 'top 80%', once: true },
+    });
+    gsap.from('.ing-core .ingredient-card', {
+      y: 30, opacity: 0, scale: 0.97,
+      duration: 0.8, stagger: 0.08, ease: 'power3.out',
+      scrollTrigger: { trigger: '.ing-core-grid', start: 'top 80%', once: true },
+    });
+    gsap.from('.ing-core-watermark', {
+      opacity: 0, scale: 0.9, duration: 1.4, ease: 'power2.out',
+      scrollTrigger: { trigger: '.ing-core', start: 'top 70%', once: true },
+    });
+
+    gsap.from('.ing-not-copy > *', {
+      y: 22, opacity: 0, filter: 'blur(8px)',
+      duration: 0.8, stagger: 0.1, ease: 'power3.out',
+      scrollTrigger: { trigger: '.ing-not', start: 'top 75%', once: true },
+    });
+    gsap.from('.ing-not-list li', {
+      x: 30, opacity: 0, filter: 'blur(6px)',
+      duration: 0.7, stagger: 0.1, ease: 'power3.out',
+      scrollTrigger: { trigger: '.ing-not-list', start: 'top 80%', once: true },
+    });
+
+    gsap.from('.ing-faq .sets-head > *', {
+      y: 22, opacity: 0, filter: 'blur(8px)',
+      duration: 0.8, stagger: 0.1, ease: 'power3.out',
+      scrollTrigger: { trigger: '.ing-faq', start: 'top 80%', once: true },
+    });
+    gsap.from('.ing-accordion-item', {
+      y: 20, opacity: 0,
+      duration: 0.6, stagger: 0.08, ease: 'power3.out',
+      scrollTrigger: { trigger: '.ing-accordion', start: 'top 85%', once: true },
+    });
+
+    // Single-open accordion behavior
+    const items = document.querySelectorAll('.ing-accordion-item');
+    items.forEach((item) => {
+      item.addEventListener('toggle', () => {
+        if (item.open) {
+          items.forEach((other) => { if (other !== item) other.open = false; });
+        }
+      });
+    });
+
+    // 3D tilt on ingredient cards
+    document.querySelectorAll('.ing-core .ingredient-card, .ing-philo-card').forEach((card) => {
+      card.addEventListener('mousemove', (e) => {
+        const r = card.getBoundingClientRect();
+        const cx = (e.clientX - r.left) / r.width - 0.5;
+        const cy = (e.clientY - r.top) / r.height - 0.5;
+        gsap.to(card, {
+          rotationX: cy * -3, rotationY: cx * 4,
+          transformPerspective: 900, duration: 0.5, ease: 'power3.out',
+        });
+      });
+      card.addEventListener('mouseleave', () => {
+        gsap.to(card, { rotationX: 0, rotationY: 0, duration: 0.8, ease: 'power3.out' });
+      });
+    });
+  }
+
+  function ourStoryPage() {
+    if (!document.querySelector('.page-story')) return;
+
+    /* Hero entrance */
+    const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+
+    gsap.set('.story-hero-circle', { scale: 0.85, opacity: 0, filter: 'blur(20px)' });
+    tl.to('.story-hero-circle', { scale: 1, opacity: 1, filter: 'blur(0px)', duration: 1.6 }, 0.1);
+
+    const els = [
+      '.story-hero-copy .eyebrow',
+      '.story-hero-title span:nth-child(1)',
+      '.story-hero-title .hl-italic',
+      '.story-hero-title span:nth-child(3)',
+      '.story-hero-sub',
+      '.story-signature',
+    ];
+    els.forEach((sel) => gsap.set(sel, { y: 22, opacity: 0, filter: 'blur(10px)' }));
+    tl.to(els, { y: 0, opacity: 1, filter: 'blur(0px)', duration: 0.85, stagger: 0.09 }, 0.4);
+
+    // Letter-spacing reveal on italic
+    tl.fromTo('.story-hero-title .hl-italic',
+      { letterSpacing: '0.06em' },
+      { letterSpacing: '-0.005em', duration: 1.2, ease: 'power3.out' }, 0.6);
+
+    gsap.set('.story-hero-portrait img', { x: 30, scale: 0.95, opacity: 0, filter: 'blur(12px)' });
+    tl.to('.story-hero-portrait img', { x: 0, scale: 1, opacity: 1, filter: 'blur(0px)', duration: 1.3 }, 0.4);
+
+    // Founder arcs draw-in
+    document.querySelectorAll('.story-hero-portrait .founder-arc path').forEach((p) => {
+      const len = p.getTotalLength ? p.getTotalLength() : 1200;
+      gsap.set(p, { strokeDasharray: len, strokeDashoffset: len });
+      gsap.to(p, { strokeDashoffset: 0, duration: 2.4, ease: 'power2.inOut', delay: 0.6 });
+    });
+
+    // Ambient float on portrait
+    gsap.to('.story-hero-portrait img', { y: -10, duration: 5, ease: 'sine.inOut', yoyo: true, repeat: -1, delay: 2 });
+    gsap.to('.story-hero-circle', { scale: 1.04, duration: 8, ease: 'sine.inOut', yoyo: true, repeat: -1, delay: 2 });
+
+    /* CTA sheen */
+    const cta = document.querySelector('.story-cta-btn');
+    if (cta) {
+      const sheen = cta.querySelector('.btn-sheen');
+      const loop = () => {
+        if (!sheen) return;
+        gsap.fromTo(sheen, { x: '-150%' }, {
+          x: '250%', duration: 1.5, ease: 'power2.inOut',
+          onComplete: () => gsap.delayedCall(2.8, loop),
+        });
+      };
+      gsap.delayedCall(2.5, loop);
+
+      const label = cta.querySelector('.btn-label');
+      cta.addEventListener('mousemove', (e) => {
+        const r = cta.getBoundingClientRect();
+        const cx = (e.clientX - r.left) / r.width - 0.5;
+        const cy = (e.clientY - r.top) / r.height - 0.5;
+        gsap.to(cta, { x: cx * 10, y: cy * 5, duration: 0.4, ease: 'power3.out' });
+        gsap.to(label, { x: cx * 5, y: cy * 3, duration: 0.4, ease: 'power3.out' });
+      });
+      cta.addEventListener('mouseleave', () => {
+        gsap.to([cta, label], { x: 0, y: 0, duration: 0.6, ease: 'elastic.out(1, 0.4)' });
+      });
+    }
+
+    if (!window.ScrollTrigger) return;
+
+    // Mission
+    gsap.from('.story-mission > .container > *', {
+      y: 26, opacity: 0, filter: 'blur(10px)',
+      duration: 0.9, stagger: 0.12, ease: 'power3.out',
+      scrollTrigger: { trigger: '.story-mission', start: 'top 75%', once: true },
+    });
+
+    // Pillars
+    gsap.from('.story-pillar', {
+      y: 30, opacity: 0, scale: 0.97,
+      duration: 0.8, stagger: 0.1, ease: 'power3.out',
+      scrollTrigger: { trigger: '.story-pillars', start: 'top 80%', once: true },
+    });
+
+    // Timeline
+    gsap.from('.story-journey .sets-head > *', {
+      y: 22, opacity: 0, filter: 'blur(8px)',
+      duration: 0.8, stagger: 0.1, ease: 'power3.out',
+      scrollTrigger: { trigger: '.story-journey', start: 'top 80%', once: true },
+    });
+    gsap.from('.story-timeline-item', {
+      x: -30, opacity: 0, filter: 'blur(8px)',
+      duration: 0.8, stagger: 0.14, ease: 'power3.out',
+      scrollTrigger: { trigger: '.story-timeline', start: 'top 80%', once: true },
+    });
+
+    // Quote
+    gsap.from('.story-quote-mark', {
+      y: 40, opacity: 0, scale: 0.8,
+      duration: 1.2, ease: 'power3.out',
+      scrollTrigger: { trigger: '.story-quote', start: 'top 75%', once: true },
+    });
+    gsap.from('.story-quote-body > *', {
+      y: 22, opacity: 0, filter: 'blur(10px)',
+      duration: 0.9, stagger: 0.12, ease: 'power3.out',
+      scrollTrigger: { trigger: '.story-quote', start: 'top 75%', once: true },
+    });
+
+    // Stats — counter animation
+    gsap.from('.story-stat', {
+      y: 22, opacity: 0,
+      duration: 0.7, stagger: 0.1, ease: 'power3.out',
+      scrollTrigger: { trigger: '.story-stats', start: 'top 80%', once: true },
+    });
+
+    // CTA
+    gsap.from('.story-cta-copy > *', {
+      y: 24, opacity: 0, filter: 'blur(8px)',
+      duration: 0.9, stagger: 0.1, ease: 'power3.out',
+      scrollTrigger: { trigger: '.story-cta', start: 'top 75%', once: true },
+    });
+    gsap.from('.story-cta-image img', {
+      x: 30, opacity: 0, scale: 0.95,
+      duration: 1.1, ease: 'power3.out',
+      scrollTrigger: { trigger: '.story-cta', start: 'top 75%', once: true },
+    });
+    gsap.to('.story-cta-image img', { y: -10, duration: 5, ease: 'sine.inOut', yoyo: true, repeat: -1, delay: 1.5 });
+  }
+
+  /* ============================================================
      Init
      ============================================================ */
   document.addEventListener('DOMContentLoaded', () => {
@@ -855,6 +1425,11 @@
     nameScreen();
     quizScreen();
     resultScreen();
+    homepageScreen();
+    pageHeroIntros();
+    matchSetPage();
+    ingredientsPage();
+    ourStoryPage();
     ambientMotion();
     animatedCTA();
     waitlistForm();
