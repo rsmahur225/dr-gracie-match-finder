@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dr. Gracie — Personalized Smile Routine in 60 Seconds</title>
-  <meta name="description" content="Answer a few questions and Dr. Gracie will recommend the right routine for your breath, gums, and teeth." />
+  <title>Dr. Gracie — Orthodontist-Designed Oral Care</title>
+  <meta name="description" content="Solution-focused oral routines designed by a board-certified orthodontist — matched to your actual concern, not everyone else's." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@1,500;1,600;1,700&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet" />
 
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="./style.css?v=2" />
+  <link rel="stylesheet" href="./style.css?v=6" />
 </head>
-<body>
+<body class="page-home">
 
   <!-- Promo bar -->
   <div class="promo-bar">
@@ -21,56 +21,51 @@
   </div>
 
   <!-- Header -->
-  <header class="site-header" data-screen-label="01 Hero">
+  <header class="site-header" data-screen-label="00 Homepage">
     <div class="container">
-      <a href="#" class="brand" aria-label="Dr. Gracie">
-        <img src="assets/img/logo.png" alt="dr-gracie-logo">
+      <a href="index.html" class="brand" aria-label="Dr. Gracie">
+        <img src="assets/img/logo.png" alt="dr-gracie-logo" />
       </a>
-
       <nav class="primary-nav" aria-label="Primary">
-        <a href="#" class="active">Home</a><span class="nav-sep">|</span>
-        <a href="#">Match Sets</a><span class="nav-sep">|</span>
-        <a href="#">Ingredients</a><span class="nav-sep">|</span>
-        <a href="#">Our Story</a><span class="nav-sep">|</span>
-        <a href="name.html">Find Your Match</a>
+        <a href="index.html" class="active">Home</a><span class="nav-sep">|</span>
+        <a href="match-set.html">Match Sets</a><span class="nav-sep">|</span>
+        <a href="ingredients.html">Ingredients</a><span class="nav-sep">|</span>
+        <a href="our-story.html">Our Story</a><span class="nav-sep">|</span>
+        <a href="find-your-match.html">Find Your Match</a>
       </nav>
-
       <button class="menu-toggle" aria-label="Open menu">
         <span></span><span></span><span></span>
       </button>
     </div>
   </header>
 
-  <!-- HERO -->
-  <section class="hero" aria-label="Hero">
-    <!-- Soft pale circle -->
-    <div class="hero-circle" aria-hidden="true"></div>
-
-   
-    <div class="container hero-grid">
-      <!-- Copy -->
-      <div class="hero-copy">
+  <!-- ========== HERO ========== -->
+  <section class="home-hero" aria-label="Hero">
+    <div class="home-hero-circle" aria-hidden="true"></div>
+    <div class="container home-hero-grid">
+      <div class="home-hero-copy">
         <div class="eyebrow">
           <span class="eyebrow-line"></span>
-          <span class="eyebrow-text">Personalized Oral Care Assessment</span>
+          <span class="eyebrow-text">ORTHODONTIST-DESIGNED ORAL CARE</span>
         </div>
-
-        <h1 class="hero-headline">
-          <span class="hl-line">Get Your Personalized</span>
-          <span class="hl-line">Smile Routine in</span>
-          <span class="hl-italic">60 Seconds!</span>
+        <h1 class="home-hero-title">
+          <span class="hl-line">Your Mouth Isn't</span>
+          <span class="hl-italic">Generic!</span>
+          <span class="hl-line">Your routine shouldn't be.</span>
         </h1>
-
-        <p class="hero-sub">
-          Answer a few questions and Dr. Gracie will recommend<br/>
-          the right routine for your breath, gums, and teeth.
+        <p class="home-hero-sub">
+          Solution-focused oral routines designed by a board-certified
+          orthodontist — matched to your actual concern, not everyone else's.
         </p>
-
-        <a href="#" class="btn btn-pill btn-primary hero-cta" id="heroCta">
-          <span class="btn-label">Start My Assessment</span>
-          <span class="btn-sheen" aria-hidden="true"></span>
-        </a>
-
+        <div class="home-hero-actions">
+          <a href="name.html" class="btn-pill btn-gold home-hero-cta" id="homeCtaA">
+            <span class="btn-label">Find your Match</span>
+            <span class="btn-sheen" aria-hidden="true"></span>
+          </a>
+          <a href="#match-sets" class="btn-pill btn-outline home-hero-cta-2">
+            <span class="btn-label">Explore Sets</span>
+          </a>
+        </div>
         <ul class="hero-bullets" aria-label="Product attributes">
           <li>FLUORIDE-FREE</li>
           <li>SLS-FREE</li>
@@ -78,45 +73,365 @@
         </ul>
       </div>
 
-      <!-- Doctor portrait -->
-      <div class="hero-portrait" aria-hidden="true">
-        <div class="portrait-float">
-          <img src="assets/img/front-gracie-01.png" alt="Dr. Gracie holding two toothpaste tubes" />
+      <div class="home-hero-products">
+        <div class="home-hero-products-inner">
+          <img src="assets/img/product-result.png" alt="Soft Mint Milk toothpaste, brush, and Calm Mint Mouth Serum still life" />
         </div>
       </div>
     </div>
-	
-	 <!-- Blue wave ribbons -->
-    <svg class="wave wave-bottom" viewBox="0 0 1920 600" preserveAspectRatio="none" aria-hidden="true">
-      <defs>
-        <linearGradient id="gradA" x1="0" x2="1" y1="0" y2="0">
-          <stop offset="0" stop-color="#0a4fb8" stop-opacity="0.0"/>
-          <stop offset="0.25" stop-color="#1a6fe0" stop-opacity="0.55"/>
-          <stop offset="0.65" stop-color="#3a8cf5" stop-opacity="0.75"/>
-          <stop offset="1" stop-color="#0a3a8c" stop-opacity="0.0"/>
-        </linearGradient>
-        <linearGradient id="gradB" x1="0" x2="1" y1="0" y2="0">
-          <stop offset="0" stop-color="#5fa9ff" stop-opacity="0"/>
-          <stop offset="0.4" stop-color="#5fa9ff" stop-opacity=".6"/>
-          <stop offset="1" stop-color="#1758c7" stop-opacity="0"/>
-        </linearGradient>
-        <linearGradient id="gradC" x1="0" x2="1" y1="0" y2="0">
-          <stop offset="0" stop-color="#0a2a78" stop-opacity="0"/>
-          <stop offset="0.5" stop-color="#1a3fa0" stop-opacity=".5"/>
-          <stop offset="1" stop-color="#0a2a78" stop-opacity="0"/>
-        </linearGradient>
-      </defs>
-      <g class="wave-group">
-        <path class="ribbon r1" d="M-50,440 C400,200 900,560 1380,300 C1660,150 1860,260 1980,200" stroke="url(#gradA)" stroke-width="22" fill="none" stroke-linecap="round"/>
-        <path class="ribbon r2" d="M-50,480 C420,260 920,580 1380,340 C1680,190 1880,300 1980,240" stroke="url(#gradB)" stroke-width="14" fill="none" stroke-linecap="round"/>
-        <path class="ribbon r3" d="M-50,520 C440,320 940,600 1380,380 C1700,240 1900,340 1980,280" stroke="url(#gradC)" stroke-width="8" fill="none" stroke-linecap="round"/>
-        <path class="ribbon r4" d="M-50,400 C380,140 880,520 1380,260 C1640,110 1860,220 1980,160" stroke="url(#gradB)" stroke-width="6" fill="none" stroke-linecap="round" opacity=".7"/>
-      </g>
-    </svg>
-
   </section>
 
-  <!-- FOOTER / WAITLIST -->
+  <!-- ========== ORAL CONCERN ========== -->
+  <section class="home-concern" aria-label="What's your oral concern" id="concern">
+    <div class="home-concern-photo" aria-hidden="true">
+      <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=1600&q=70" alt="" loading="lazy" />
+      <div class="home-concern-photo-fade"></div>
+    </div>
+    <div class="container home-concern-grid">
+      <div class="home-concern-copy">
+        <div class="eyebrow eyebrow-gold">
+          <span class="eyebrow-line"></span>
+          <span>FIND YOUR MATCH</span>
+        </div>
+        <h2 class="home-concern-title">What's your oral concern?</h2>
+        <p class="home-concern-sub">
+          We've matched every product to a specific problem. Tell us what's
+          bothering you — we'll tell you exactly which routine is yours.
+        </p>
+
+        <div class="concern-stack">
+          <a href="name.html" class="concern-card" data-tone="brightness">
+            <span class="concern-dot"></span>
+            <h3 class="concern-card-title">Brightness</h3>
+            <p class="concern-card-desc">Dull teeth or surface staining — you want brighter, without the damage from harsh whitening strips.</p>
+            <span class="concern-card-link">View Brightness Set <span class="arrow">→</span></span>
+          </a>
+          <a href="name.html" class="concern-card" data-tone="barrier">
+            <span class="concern-dot"></span>
+            <h3 class="concern-card-title">Barrier Repair</h3>
+            <p class="concern-card-desc">Sensitivity and enamel wear — cold water hurts and you want protection, not just a temporary fix.</p>
+            <span class="concern-card-link">View Barrier Repair Set <span class="arrow">→</span></span>
+          </a>
+          <a href="name.html" class="concern-card" data-tone="gum">
+            <span class="concern-dot"></span>
+            <h3 class="concern-card-title">Gum Reset</h3>
+            <p class="concern-card-desc">Gum health and breath — you notice bleeding when you floss or feel self-conscious in close conversations.</p>
+            <span class="concern-card-link">View Gum Reset Set <span class="arrow">→</span></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== MATCH SETS ========== -->
+  <section class="home-sets" aria-label="Match sets" id="match-sets">
+    <div class="container">
+      <div class="sets-head">
+        <p class="eyebrow eyebrow-gold">
+          <span class="eyebrow-line"></span>
+          <span>FIND YOUR MATCH</span>
+        </p>
+        <h2 class="sets-title">
+          Three routines.<br />
+          One specific concern each.
+        </h2>
+      </div>
+
+      <div class="sets-grid">
+
+        <article class="set-card" data-tone="brightness">
+          <div class="set-card-head">
+            <div class="set-meta">
+              <p class="set-label">MATCH SET 01</p>
+              <h3 class="set-name">Brightness</h3>
+              <p class="set-tag">"Your whitening routine — without the damage."</p>
+            </div>
+            <div class="set-image">
+              <img src="assets/img/toothpaste.png" alt="Soft Mint Milk toothpaste tube" />
+            </div>
+          </div>
+          <ul class="set-includes">
+            <li>Soft Mint Milk Toothpaste (3.8oz)</li>
+            <li>Calm Mint Mouth Serum (15ml)</li>
+            <li>Ultra-Soft Matte Toothbrush</li>
+          </ul>
+          <div class="set-card-foot">
+            <div class="set-price">
+              <span class="set-price-amount">$48</span>
+              <span class="set-price-sub">or subscribe &amp; save 15%</span>
+            </div>
+            <button type="button" class="btn-pill btn-outline-dark set-shop">Shop Set</button>
+          </div>
+        </article>
+
+        <article class="set-card" data-tone="barrier">
+          <div class="set-card-head">
+            <div class="set-meta">
+              <p class="set-label">MATCH SET 02</p>
+              <h3 class="set-name">Barrier Repair</h3>
+              <p class="set-tag">"Strengthen what's already there."</p>
+            </div>
+            <div class="set-image">
+              <img src="assets/img/toothpaste.png" alt="Soft Mint Milk toothpaste tube" />
+            </div>
+          </div>
+          <ul class="set-includes">
+            <li>Soft Mint Milk Toothpaste (3.8oz)</li>
+            <li>Calm Mint Mouth Serum (15ml)</li>
+            <li>Ultra-Soft Matte Toothbrush</li>
+          </ul>
+          <div class="set-card-foot">
+            <div class="set-price">
+              <span class="set-price-amount">$48</span>
+              <span class="set-price-sub">or subscribe &amp; save 15%</span>
+            </div>
+            <button type="button" class="btn-pill btn-outline-dark set-shop">Shop Set</button>
+          </div>
+        </article>
+
+        <article class="set-card" data-tone="gum">
+          <div class="set-card-head">
+            <div class="set-meta">
+              <p class="set-label">MATCH SET 03</p>
+              <h3 class="set-name">Gum Reset</h3>
+              <p class="set-tag">"Freshness that starts with healthy gums."</p>
+            </div>
+            <div class="set-image">
+              <img src="assets/img/toothpaste.png" alt="Soft Mint Milk toothpaste tube" />
+            </div>
+          </div>
+          <ul class="set-includes">
+            <li>Soft Mint Milk Toothpaste (3.8oz)</li>
+            <li>Calm Mint Mouth Serum (15ml)</li>
+            <li>Ultra-Soft Matte Toothbrush</li>
+          </ul>
+          <div class="set-card-foot">
+            <div class="set-price">
+              <span class="set-price-amount">$48</span>
+              <span class="set-price-sub">or subscribe &amp; save 15%</span>
+            </div>
+            <button type="button" class="btn-pill btn-outline-dark set-shop">Shop Set</button>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOUNDER ========== -->
+  <section class="home-founder video-section" aria-label="Meet our founder" id="founder">
+  <video autoplay muted loop playsinline class="bg-video">
+			<source src="assets/video/bg_01.mp4" type="video/mp4">
+		  </video>
+    <div class="container home-founder-grid">
+      <div class="founder-portrait">
+        <img src="assets/img/front-gracie-01.png" alt="Dr. Gracie portrait" />
+      </div>
+		 
+      <div class="founder-copy content">
+        <p class="eyebrow eyebrow-gold">
+          <span class="eyebrow-line"></span>
+          <span>MEET OUR FOUNDER</span>
+        </p>
+        <h2 class="founder-name">Dr. Gracie</h2>
+        <p class="founder-credentials">Board-Certified Orthodontist &nbsp;·&nbsp; Rio Grande Valley</p>
+        <h3 class="founder-quote">She put her name on the tube because she stands behind what's in it.</h3>
+        <p class="founder-body">
+          After 20+ years in practice, Dr. Gracie kept seeing the same thing:
+          patients weren't failing at oral care — they were using products not
+          designed for their actual problems. Generic toothpastes. One-size-fits-all
+          routines. People blaming themselves when the product just wasn't right for them.
+        </p>
+        <p class="founder-body">
+          She created Dr. Gracie to fix that. Every formula is rooted in what
+          she's seen work in practice — not what's trending on social media.
+        </p>
+        <div class="founder-stats">
+          <div class="founder-stat">
+            <span class="founder-stat-num">20+</span>
+            <span class="founder-stat-label">Years of Experience</span>
+          </div>
+          <div class="founder-stat">
+            <span class="founder-stat-num">Board</span>
+            <span class="founder-stat-label">Certified orthodontist</span>
+          </div>
+          <div class="founder-stat">
+            <span class="founder-stat-num">nHA</span>
+            <span class="founder-stat-label">Gold standard since 1980s</span>
+          </div>
+        </div>
+        <button type="button" class="btn-pill btn-outline-dark founder-cta">Know More</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========== INGREDIENTS ========== -->
+  <section class="home-ingredients" aria-label="What's inside" id="ingredients">
+    <div class="home-ingredients-watermark" aria-hidden="true">
+      <img src="assets/img/logo.png" alt="" />
+    </div>
+
+    <div class="container home-ingredients-grid">
+      <div class="ingredients-products">
+        <img src="assets/img/product-result.png" alt="Soft Mint Milk and Calm Mint Serum set on pedestal" />
+      </div>
+
+      <div class="ingredients-content">
+        <p class="eyebrow eyebrow-gold eyebrow-light">
+          <span class="eyebrow-line"></span>
+          <span>WHATS INSIDE</span>
+        </p>
+        <h2 class="ingredients-title">
+          We will tell you exactly<br />
+          what's in it and why it matters.
+        </h2>
+
+        <div class="ingredients-grid">
+          <article class="ingredient-card">
+            <div class="ingredient-head">
+              <span class="ingredient-icon">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <circle cx="12" cy="12" r="3" fill="currentColor"/>
+                  <circle cx="12" cy="4" r="2" fill="currentColor"/>
+                  <circle cx="12" cy="20" r="2" fill="currentColor"/>
+                  <circle cx="4" cy="12" r="2" fill="currentColor"/>
+                  <circle cx="20" cy="12" r="2" fill="currentColor"/>
+                  <circle cx="6" cy="6" r="2" fill="currentColor"/>
+                  <circle cx="18" cy="18" r="2" fill="currentColor"/>
+                  <circle cx="6" cy="18" r="2" fill="currentColor"/>
+                  <circle cx="18" cy="6" r="2" fill="currentColor"/>
+                </svg>
+              </span>
+              <div>
+                <h4 class="ingredient-name">Nano-Hydroxyapatite</h4>
+                <p class="ingredient-dose">nHA · 10% in toothpaste</p>
+              </div>
+            </div>
+            <p class="ingredient-desc">A naturally occurring mineral that makes up 97% of tooth enamel. nHA particles bond to the tooth surface, filling micro-cracks and supporting enamel health. The gold standard in Japanese oral care since the 1980s.</p>
+            <p class="ingredient-tag">Core active ingredient</p>
+          </article>
+
+          <article class="ingredient-card">
+            <div class="ingredient-head">
+              <span class="ingredient-icon">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M12 3l3 5h-6l3-5zm0 18l-3-5h6l-3 5zm-9-9l5-3v6l-5-3zm18 0l-5 3v-6l5 3z" fill="currentColor"/>
+                </svg>
+              </span>
+              <div>
+                <h4 class="ingredient-name">Zinc Citrate</h4>
+                <p class="ingredient-dose">0.5–1% · max in Gum Reset</p>
+              </div>
+            </div>
+            <p class="ingredient-desc">Supports a balanced oral environment and freshness from the source. Included at maximum concentration in the Gum Reset set — not just masking, but addressing the underlying cause.</p>
+            <p class="ingredient-tag">Gum &amp; breath support</p>
+          </article>
+
+          <article class="ingredient-card">
+            <div class="ingredient-head">
+              <span class="ingredient-icon">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <circle cx="12" cy="12" r="2" fill="currentColor"/>
+                  <circle cx="12" cy="5" r="1.6" fill="currentColor"/>
+                  <circle cx="12" cy="19" r="1.6" fill="currentColor"/>
+                  <circle cx="5" cy="12" r="1.6" fill="currentColor"/>
+                  <circle cx="19" cy="12" r="1.6" fill="currentColor"/>
+                  <circle cx="7" cy="7" r="1.4" fill="currentColor"/>
+                  <circle cx="17" cy="17" r="1.4" fill="currentColor"/>
+                  <circle cx="7" cy="17" r="1.4" fill="currentColor"/>
+                  <circle cx="17" cy="7" r="1.4" fill="currentColor"/>
+                </svg>
+              </span>
+              <div>
+                <h4 class="ingredient-name">Potassium Nitrate</h4>
+                <p class="ingredient-dose">5% · Barrier Repair focus</p>
+              </div>
+            </div>
+            <p class="ingredient-desc">Calms nerve sensitivity by blocking pain signal pathways in dentinal tubules. Included at full 5% in the Barrier Repair set — dialed for those with sensitivity concerns.</p>
+            <p class="ingredient-tag">Sensitivity comfort</p>
+          </article>
+
+          <article class="ingredient-card">
+            <div class="ingredient-head">
+              <span class="ingredient-icon">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <circle cx="8" cy="10" r="2" fill="currentColor"/>
+                  <circle cx="16" cy="10" r="2" fill="currentColor"/>
+                  <circle cx="8" cy="16" r="2" fill="currentColor"/>
+                  <circle cx="16" cy="16" r="2" fill="currentColor"/>
+                  <circle cx="12" cy="6" r="2" fill="currentColor"/>
+                  <path d="M8 10l4-4 4 4M8 16l4 4 4-4M8 10v6M16 10v6" stroke="currentColor" stroke-width="1.4"/>
+                </svg>
+              </span>
+              <div>
+                <h4 class="ingredient-name">Sodium Hyaluronate</h4>
+                <p class="ingredient-dose">0.1% · in Mouth Serum</p>
+              </div>
+            </div>
+            <p class="ingredient-desc">The same ingredient in your skincare serum — now for your oral mucosa. Supports mucosal hydration overnight in the leave-on Calm Mint Serum. Think skincare serum, for your enamel.</p>
+            <p class="ingredient-tag">Oral skincare proof point</p>
+          </article>
+        </div>
+
+        <ul class="ingredient-chips" aria-label="Formula attributes">
+          <li><span class="chip-dot"></span>Fluoride-free</li>
+          <li><span class="chip-dot"></span>SLS-free</li>
+          <li><span class="chip-dot"></span>Alcohol-free serum</li>
+          <li><span class="chip-dot"></span>RDA &lt; 70 (low abrasivity)</li>
+          <li><span class="chip-dot"></span>Neutral pH 6.8–7.2</li>
+          <li><span class="chip-dot"></span>Orthodontist-designed</li>
+          <li><span class="chip-dot"></span>No peroxide</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== WHY DR. GRACIE ========== -->
+  <section class="home-why" aria-label="Why Dr. Gracie">
+    <div class="container home-why-inner">
+      <div class="why-head">
+        <p class="eyebrow eyebrow-gold">
+          <span class="eyebrow-line"></span>
+          <span>WHY DR. GRACIE</span>
+        </p>
+        <h2 class="why-title">
+          Oral care that respects your<br />
+          intelligence — and your time.
+        </h2>
+      </div>
+
+      <div class="why-grid">
+        <article class="why-card why-card--photo">
+          <h3 class="why-card-title">Deep Research</h3>
+          <p class="why-card-body">Every formula is backed by peer-reviewed science — including 40+ years of nHA clinical use and studies by Tschoppe, Amaechi, and Kensche. We cite our sources. You can look them up.</p>
+        </article>
+        <article class="why-card">
+          <h3 class="why-card-title">Total Transparency</h3>
+          <p class="why-card-body">We list every ingredient, every concentration range, and every pending certification honestly. If we don't know yet, we say so. No greenwashing. No marketing claims we can't back.</p>
+        </article>
+        <article class="why-card why-card--photo">
+          <h3 class="why-card-title">Matched to You</h3>
+          <p class="why-card-body">No one-size-fits-all routine. Three concern-specific sets — Brightness, Barrier Repair, and Gum Reset — formulated to address your exact issue, not everyone else's.</p>
+        </article>
+
+        <article class="why-card">
+          <h3 class="why-card-title">Real Clinical Authority</h3>
+          <p class="why-card-body">Dr. Gracie is a board-certified orthodontist with 20+ years of practice in the Rio Grande Valley. She put her name on the tube because she stands behind what's in it.</p>
+        </article>
+        <article class="why-card why-card--photo why-card--no">
+          <h3 class="why-card-title">No Shame, No Scare</h3>
+          <p class="why-card-body">Oral care has made people feel embarrassed for too long. We don't use fear-based copy or guilt tactics. We just explain what works and let you decide.</p>
+        </article>
+        <article class="why-card">
+          <h3 class="why-card-title">Simple, Honest Packaging</h3>
+          <p class="why-card-body">Tin tubes. Step numbers on the box. A script logo with a real person's name on it. Designed to stand out for the right reasons — not to impress, but to inform.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER / WAITLIST ========== -->
   <footer class="site-footer">
     <div class="container footer-top">
       <div class="waitlist-copy">
@@ -140,20 +455,18 @@
 
     <div class="container footer-cols">
       <div class="footer-logo">
-        <img src="assets/img/logo-white.png" alt="dr-gracie-logo-footer">
+        <img src="assets/img/logo-white.png" alt="dr-gracie-logo-footer" />
       </div>
-
       <div class="footer-col">
         <h4>Quick Links</h4>
         <ul>
-          <li><span class="bullet"></span><a href="#">Home</a></li>
-          <li><span class="bullet"></span><a href="#">Match Sets</a></li>
-          <li><span class="bullet"></span><a href="#">Ingredients</a></li>
-          <li><span class="bullet"></span><a href="#">Our Story</a></li>
-          <li><span class="bullet"></span><a href="#">Find Your Match</a></li>
+          <li><span class="bullet"></span><a href="index.html">Home</a></li>
+          <li><span class="bullet"></span><a href="#match-sets">Match Sets</a></li>
+          <li><span class="bullet"></span><a href="#ingredients">Ingredients</a></li>
+          <li><span class="bullet"></span><a href="#founder">Our Story</a></li>
+          <li><span class="bullet"></span><a href="name.html">Find Your Match</a></li>
         </ul>
       </div>
-
       <div class="footer-col">
         <h4>Important Links</h4>
         <ul>
@@ -164,7 +477,6 @@
           <li><span class="bullet"></span><a href="#">Privacy</a></li>
         </ul>
       </div>
-
       <div class="footer-col">
         <h4>Follow Us On</h4>
         <ul class="social-list">
@@ -187,6 +499,6 @@
   <!-- GSAP -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-  <script src="./script.js?v=2"></script>
+  <script src="./script.js?v=6"></script>
 </body>
 </html>
