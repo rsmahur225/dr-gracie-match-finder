@@ -1,670 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Dr. Gracie — Three clinically-designed oral care routines matched to your unique concern. Dentist-formulated, science-backed, clean ingredients.">
-  <title>Dr. Gracie — Premium Oral Care</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr. Gracie — Personalized Smile Routine in 60 Seconds</title>
+  <meta name="description" content="Answer a few questions and Dr. Gracie will recommend the right routine for your breath, gums, and teeth." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@1,500;1,600;1,700&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./style.css?v=2" />
 </head>
 <body>
 
-<!-- ═══════════════════════════════════
-     ANNOUNCEMENT BAR
-═══════════════════════════════════ -->
-<div class="announce">
-  Unlock the Future of Oral Wellness with Dr. Gracie —&nbsp;<a href="#waitlist">JOIN THE WAITLIST</a>
-</div>
+  <!-- Promo bar -->
+  <div class="promo-bar">
+    <p>FREE Shipping on all orders over <strong>$70</strong> &nbsp;-&nbsp; <a href="#">Shop Now</a></p>
+  </div>
 
-<!-- ═══════════════════════════════════
-     NAVIGATION
-═══════════════════════════════════ -->
-<header class="site-header" id="site-header">
-  <div class="wrap">
-    <nav class="nav">
-      <a href="index.html" class="nav-logo">
-        <img src="uploads/logo.png" alt="Dr. Gracie">
+  <!-- Header -->
+  <header class="site-header" data-screen-label="01 Hero">
+    <div class="container">
+      <a href="#" class="brand" aria-label="Dr. Gracie">
+        <img src="assets/img/logo.png" alt="dr-gracie-logo">
       </a>
-      <ul class="nav-links" id="nav-links">
-        <li><a href="index.html"        class="nav-link">Home</a></li>
-        <li><a href="#how-it-works" class="nav-link">How It Works</a></li>
-        <li><a href="match-set.html"  class="nav-link">Match Sets</a></li>
-        <li><a href="#ingredients" class="nav-link">Ingredients</a></li>
-        <li><a href="#our-story"   class="nav-link">Our Story</a></li>
-        <li><a href="#faq"         class="nav-link">FAQs</a></li>
-      </ul>
-      <a href="find-your-match.html" class="btn btn-dk nav-cta">Find Your Match</a>
-      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">
+
+      <nav class="primary-nav" aria-label="Primary">
+        <a href="#" class="active">Home</a><span class="nav-sep">|</span>
+        <a href="#">Match Sets</a><span class="nav-sep">|</span>
+        <a href="#">Ingredients</a><span class="nav-sep">|</span>
+        <a href="#">Our Story</a><span class="nav-sep">|</span>
+        <a href="name.html">Find Your Match</a>
+      </nav>
+
+      <button class="menu-toggle" aria-label="Open menu">
         <span></span><span></span><span></span>
       </button>
-    </nav>
-  </div>
-</header>
+    </div>
+  </header>
 
-<main>
+  <!-- HERO -->
+  <section class="hero" aria-label="Hero">
+    <!-- Soft pale circle -->
+    <div class="hero-circle" aria-hidden="true"></div>
 
+   
+    <div class="container hero-grid">
+      <!-- Copy -->
+      <div class="hero-copy">
+        <div class="eyebrow">
+          <span class="eyebrow-line"></span>
+          <span class="eyebrow-text">Personalized Oral Care Assessment</span>
+        </div>
 
-
-
-<!-- ═══════════════════════════════════
-     HERO
-═══════════════════════════════════ -->
-<section class="hero" id="home">
-  <div class="wrap">
-    <div class="hero-grid">
-      <div class="hero-content">
-        <h1 class="hero-h1">
-          One Tube for<br>
-          every mouth was<br>
-          <em>always the problem!</em> 
+        <h1 class="hero-headline">
+          <span class="hl-line">Get Your Personalized</span>
+          <span class="hl-line">Smile Routine in</span>
+          <span class="hl-italic">60 Seconds!</span>
         </h1>
-        <p class="hero-p">Three clinically-designed routines, each formulated for a specific oral concern. Brightness, sensitivity, or gum health — your match is here.</p>
-        <div class="hero-btns">
-          <a href="#quiz"     class="btn btn-dk  btn-lg">Find Your Match</a>
-          <a href="#waitlist" class="btn btn-ol  btn-lg">Join the Waitlist</a>
-        </div>
-        <div class="hero-trust">
-          <div class="trust-item">
-            <svg viewBox="0 0 36 36" fill="none" aria-hidden="true">
-              <path d="M18 4c-4.5 0-8 3.8-8 8 0 5.5 4 10 6.5 13l1.5 1.5 1.5-1.5C22 22 26 17.5 26 12c0-4.2-3.5-8-8-8z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
-              <path d="M14 12.5l3 3.5 6-6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            <span>Dentist<br>Designed</span>
-          </div>
-          <div class="trust-item">
-            <svg viewBox="0 0 36 36" fill="none" aria-hidden="true">
-              <path d="M13 5h10M15 5v9L8 26a2 2 0 0 0 1.7 3h16.6A2 2 0 0 0 28 26L21 14V5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M11 22h14" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
-            </svg>
-            <span>Science<br>Backed</span>
-          </div>
-          <div class="trust-item">
-            <svg viewBox="0 0 36 36" fill="none" aria-hidden="true">
-              <path d="M18 30V16M18 16c0-9 11-12 11-12s0 12-11 12M18 16c0-9-11-12-11-12s0 12 11 12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            <span>Clean &amp;<br>Effective</span>
-          </div>
-          <div class="trust-item">
-            <svg viewBox="0 0 36 36" fill="none" aria-hidden="true">
-              <circle cx="18" cy="18" r="14" stroke="currentColor" stroke-width="1.4"/>
-              <path d="M18 8v10l6 6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
-              <path d="M14 28c1.2 1.6 8.8 1.6 10 0" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
-            </svg>
-            <span>Made in<br>California</span>
-          </div>
-        </div>
+
+        <p class="hero-sub">
+          Answer a few questions and Dr. Gracie will recommend<br/>
+          the right routine for your breath, gums, and teeth.
+        </p>
+
+        <a href="#" class="btn btn-pill btn-primary hero-cta" id="heroCta">
+          <span class="btn-label">Start My Assessment</span>
+          <span class="btn-sheen" aria-hidden="true"></span>
+        </a>
+
+        <ul class="hero-bullets" aria-label="Product attributes">
+          <li>FLUORIDE-FREE</li>
+          <li>SLS-FREE</li>
+          <li>NHA-POWERED</li>
+        </ul>
       </div>
-      <div class="hero-media">
-        <img src="uploads/banner-01.jpg" alt="Dr. Gracie complete oral care product set" loading="eager">
+
+      <!-- Doctor portrait -->
+      <div class="hero-portrait" aria-hidden="true">
+        <div class="portrait-float">
+          <img src="assets/img/front-gracie-01.png" alt="Dr. Gracie holding two toothpaste tubes" />
+        </div>
       </div>
     </div>
-  </div>
-</section>
+	
+	 <!-- Blue wave ribbons -->
+    <svg class="wave wave-bottom" viewBox="0 0 1920 600" preserveAspectRatio="none" aria-hidden="true">
+      <defs>
+        <linearGradient id="gradA" x1="0" x2="1" y1="0" y2="0">
+          <stop offset="0" stop-color="#0a4fb8" stop-opacity="0.0"/>
+          <stop offset="0.25" stop-color="#1a6fe0" stop-opacity="0.55"/>
+          <stop offset="0.65" stop-color="#3a8cf5" stop-opacity="0.75"/>
+          <stop offset="1" stop-color="#0a3a8c" stop-opacity="0.0"/>
+        </linearGradient>
+        <linearGradient id="gradB" x1="0" x2="1" y1="0" y2="0">
+          <stop offset="0" stop-color="#5fa9ff" stop-opacity="0"/>
+          <stop offset="0.4" stop-color="#5fa9ff" stop-opacity=".6"/>
+          <stop offset="1" stop-color="#1758c7" stop-opacity="0"/>
+        </linearGradient>
+        <linearGradient id="gradC" x1="0" x2="1" y1="0" y2="0">
+          <stop offset="0" stop-color="#0a2a78" stop-opacity="0"/>
+          <stop offset="0.5" stop-color="#1a3fa0" stop-opacity=".5"/>
+          <stop offset="1" stop-color="#0a2a78" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+      <g class="wave-group">
+        <path class="ribbon r1" d="M-50,440 C400,200 900,560 1380,300 C1660,150 1860,260 1980,200" stroke="url(#gradA)" stroke-width="22" fill="none" stroke-linecap="round"/>
+        <path class="ribbon r2" d="M-50,480 C420,260 920,580 1380,340 C1680,190 1880,300 1980,240" stroke="url(#gradB)" stroke-width="14" fill="none" stroke-linecap="round"/>
+        <path class="ribbon r3" d="M-50,520 C440,320 940,600 1380,380 C1700,240 1900,340 1980,280" stroke="url(#gradC)" stroke-width="8" fill="none" stroke-linecap="round"/>
+        <path class="ribbon r4" d="M-50,400 C380,140 880,520 1380,260 C1640,110 1860,220 1980,160" stroke="url(#gradB)" stroke-width="6" fill="none" stroke-linecap="round" opacity=".7"/>
+      </g>
+    </svg>
 
-<!-- ═══════════════════════════════════
-     THE PROBLEM
-═══════════════════════════════════ -->
-<section class="sec prob-sec" id="how-it-works">
-  <div class="wrap">
-    <span class="eyebrow eyebrow--c">The Problem</span>
-    <h2 class="h2 h2--c">Oral Care hasn't kept up with you.</h2>
-    <div class="prob-grid">
+  </section>
 
-      <div class="prob-card">
-        <div class="prob-icon">
-          <svg viewBox="0 0 48 48" fill="none">
-            <rect x="6" y="12" width="36" height="26" rx="3" stroke="currentColor" stroke-width="1.5"/>
-            <path d="M14 22h20M14 28h13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-          </svg>
-        </div>
-        <h3>Generic Formulas</h3>
-        <p>Most oral care products use one formula for all. Generic one-size formulas don't address your unique oral concerns and may cause more harm than good.</p>
+  <!-- FOOTER / WAITLIST -->
+  <footer class="site-footer">
+    <div class="container footer-top">
+      <div class="waitlist-copy">
+        <h2 class="waitlist-title">Be among the first 500.</h2>
+        <p class="waitlist-sub">
+          We're launching mid-April 2026. Join early access for first-in-line
+          ordering, a founder note from Dr. Gracie, and 15% off your first
+          Match Set — permanently locked in.
+        </p>
       </div>
-
-      <div class="prob-card">
-        <div class="prob-icon">
-          <svg viewBox="0 0 48 48" fill="none">
-            <path d="M24 6l3 6.5 7.5 1.1-5.5 5.3 1.3 7.5L24 23l-6.3 3.4 1.3-7.5-5.5-5.3 7.5-1z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-            <path d="M24 36v5M20 41h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-          </svg>
+      <form class="waitlist-form" id="waitlistForm" novalidate>
+        <div class="waitlist-field">
+          <input type="email" id="email" placeholder="enteryouremail@name.com" required aria-label="Email address" autocomplete="email" />
+          <button type="submit" class="btn-pill btn-primary waitlist-btn">Join Waitlist</button>
         </div>
-        <h3>Hidden Irritants</h3>
-        <p>Many ingredients and colorants found in standard oral care formulas can disrupt your oral microbiome and trigger sensitivity or inflammation.</p>
-      </div>
-
-      <div class="prob-card">
-        <div class="prob-icon">
-          <svg viewBox="0 0 48 48" fill="none">
-            <circle cx="24" cy="24" r="17" stroke="currentColor" stroke-width="1.5"/>
-            <path d="M24 13v11.5l7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-          </svg>
-        </div>
-        <h3>Short-term Fixes</h3>
-        <p>Most solutions focus on surface aesthetics without supporting lasting enamel strength, healthier gums, or your long-term oral health.</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════
-     CHOOSE YOUR CONCERN / QUIZ
-═══════════════════════════════════ -->
-<section class="sec concern-sec" id="quiz">
-  <div class="wrap">
-
-      <!-- RIGHT: content + cards -->
-      <div class="concern-split__content" id="concern-content">
-        <span class="eyebrow">What Is Your Biggest Oral Concern?</span>
-        <h2 class="h2">Choose your concern<br>to find your Match</h2>
-
-        <div class="concern-list">
-
-          <a href="match-set.html" class="concern-item">
-            <div class="concern-item__img">
-              <img src="uploads/option-01.png" alt="Brightness" loading="lazy">
-            </div>
-            <div class="concern-item__body">
-              <h3>Brightness</h3>
-              <p>Dull shine, surface build-up, and a less-than-radiant smile.</p>
-              <span class="concern-arr">Know More ›</span>
-            </div>
-          </a>
-
-          <a href="match-set.html" class="concern-item">
-            <div class="concern-item__img">
-              <img src="uploads/option-02.png" alt="Barrier Repair" loading="lazy">
-            </div>
-            <div class="concern-item__body">
-              <h3>Barrier Repair</h3>
-              <p>Sensitivity, enamel thinning, and the need for deep protection.</p>
-              <span class="concern-arr">Know More ›</span>
-            </div>
-          </a>
-
-          <a href="match-set.html" class="concern-item">
-            <div class="concern-item__img">
-              <img src="uploads/option-03.png" alt="Gum Reset" loading="lazy">
-            </div>
-            <div class="concern-item__body">
-              <h3>Gum Reset</h3>
-              <p>Redness, irritation, and the need for gum tissue repair.</p>
-              <span class="concern-arr">Know More ›</span>
-            </div>
-          </a>
-
-        </div>
-        <div style="margin-top:28px; text-align:center;">
-          <a href="#quiz" class="btn btn-dk btn-lg">Take the 30 Second Quiz</a>
-        </div>
-      </div>
-
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════
-     MATCH SETS
-═══════════════════════════════════ -->
-<section class="sec sets-sec" id="match-sets">
-  <div class="wrap">
-    <span class="eyebrow eyebrow--c">Three Routines For You</span>
-    <h2 class="h2 h2--c">Match Sets</h2>
-    <p class="sub sub--c">Each set is a complete 3-Step Routine designed to work in harmony.</p>
-    <div class="sets-grid">
-
-      <div class="set-card">
-        <div class="set-img">
-          <img src="uploads/set-01.png" alt="Bright + Balance oral care set" loading="lazy">
-        </div>
-        <div class="set-body">
-          <span class="set-tag">Brightness Set</span>
-          <h3>Bright + Balance</h3>
-          <p>For a visible-brighter, cleaner smile</p>
-          <a href="match-set.html" class="btn btn-olv btn-sm">Join Waitlist</a>
-        </div>
-      </div>
-
-      <div class="set-card">
-        <div class="set-img">
-          <img src="uploads/set-02.png" alt="Comfort + Protect oral care set" loading="lazy">
-        </div>
-        <div class="set-body">
-          <span class="set-tag">Barrier Repair Set</span>
-          <h3>Comfort + Protect</h3>
-          <p>For sensitivity relief and stronger enamel</p>
-          <a href="match-set.html" class="btn btn-olv btn-sm">Join Waitlist</a>
-        </div>
-      </div>
-
-      <div class="set-card">
-        <div class="set-img">
-          <img src="uploads/set-03.png" alt="Calm + Defend oral care set" loading="lazy">
-        </div>
-        <div class="set-body">
-          <span class="set-tag">Gum Reset Set</span>
-          <h3>Calm + Defend</h3>
-          <p>For healthier gums and better daily comfort</p>
-          <a href="match-set.html" class="btn btn-olv btn-sm">Join Waitlist</a>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════
-     SCIENCE / FORMULATION
-═══════════════════════════════════ -->
-<section class="sec sci-sec" id="science">
-  <div class="wrap">
-    <div class="sci-inner">
-
-      <div class="sci-copy" id="sci-copy">
-        <span class="eyebrow">Things of Matching</span>
-        <h2>Formulated with Purpose<br>Matched by Science.</h2>
-        <p>We don't change everything. We change what matters for your concern — intentionally, purposefully, with clinical-grade ingredients.</p>
-        <p>Each set starts from the same nHA foundation, then elevates the key ingredients your concern needs most.</p>
-        <a href="#our-story" class="arr-link" style="margin-top:16px;">See the science behind each set <span>→</span></a>
-      </div>
-
-      <div class="sci-table-wrap" id="sci-table">
-        <div class="sci-tbl">
-          <div class="sci-head">
-            <div class="sci-h-empty"></div>
-            <div class="sci-col-h sci-col-h--b">Brightness<br>Set</div>
-            <div class="sci-col-h sci-col-h--w">Barrier Repair<br>Set</div>
-            <div class="sci-col-h sci-col-h--s">Gum Reset<br>Set</div>
-          </div>
-          <div class="sci-row">
-            <div class="sci-rl">AHA</div>
-            <div class="sci-cell"><span class="dot dot-g"></span>Good Level</div>
-            <div class="sci-cell"><span class="dot dot-g"></span>Good Level</div>
-            <div class="sci-cell"><span class="dot dot-g"></span>Good Level</div>
-          </div>
-          <div class="sci-row">
-            <div class="sci-rl">Dry Climate</div>
-            <div class="sci-cell"><span class="dot dot-g"></span>Good Level</div>
-            <div class="sci-cell"><span class="dot dot-g"></span>Good Level</div>
-            <div class="sci-cell"><span class="dot dot-g"></span>Good Level</div>
-          </div>
-          <div class="sci-row">
-            <div class="sci-rl">Potassium Nitrate</div>
-            <div class="sci-cell"><span class="dot dot-a"></span>Good Level</div>
-            <div class="sci-cell"><span class="dot dot-g"></span>Good Level</div>
-            <div class="sci-cell"><span class="dot dot-b"></span>Higher Amount</div>
-          </div>
-        </div>
-        <p class="sci-note">All sets are built on a foundation of nHA to support enamel. Each set then elevates the key ingredient your concern needs most.</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════
-     FOUNDER
-═══════════════════════════════════ -->
-<section class="sec founder-sec" id="our-story">
-  <div class="wrap">
-    <div class="founder-inner">
-
-      <div class="founder-media" id="founder-media">
-        <img src="uploads/dr-gracie-01.png" alt="Dr. Gracie, Board-Certified Dentist" class="founder-photo">
-        <div class="founder-abstract" aria-hidden="true">
-          <img src="uploads/abstract.jpg" alt="">
-        </div>
-      </div>
-
-      <div class="founder-copy" id="founder-copy">
-        <span class="eyebrow">Meet Our Founder</span>
-        <h2>Dr. Gracie</h2>
-        <span class="founder-title">Board-Certified Dentist · Bio: Granite Valley</span>
-        <blockquote class="founder-quote">
-          "She put her name on the tube because she stands behind what's in it."
-        </blockquote>
-        <p class="founder-bio">After 20+ years in practice, Dr. Gracie kept seeing the same thing: patients weren't failing at oral care — they were using products not designed for their actual problems. Generic formulas miss the mark. Personalised care matters.</p>
-        <p class="founder-bio">She created Dr. Gracie to fix this. Every formula is rooted in clinical practice — not what's trending on social media.</p>
-        <div class="founder-stats">
-          <div>
-            <span class="stat-n">20+</span>
-            <span class="stat-l">Years in practice</span>
-          </div>
-          <div>
-            <span class="stat-n">Board</span>
-            <span class="stat-l">Certified practitioner</span>
-          </div>
-          <div>
-            <span class="stat-n">nHA</span>
-            <span class="stat-l">Formulated with</span>
-          </div>
-        </div>
-        <a href="#our-story" class="btn btn-dk">Know More</a>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════
-     WHY DR. GRACIE
-═══════════════════════════════════ -->
-<section class="sec why-sec" id="why">
-  <div class="wrap">
-    <span class="eyebrow eyebrow--c">Why Dr. Gracie</span>
-    <h2 class="h2 h2--c">Crafting Confident Smiles<br>Through Superior Experience</h2>
-    <div class="why-grid">
-
-      <div class="why-card">
-        <div class="why-icon">
-          <svg viewBox="0 0 48 48" fill="none">
-            <path d="M24 6c-5 0-9 4.2-9 9.5 0 7 5 12.5 8 15.5l1 1 1-1c3-3 8-8.5 8-15.5 0-5.3-4-9.5-9-9.5z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-            <path d="M20 16l3 3.5 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M16 38h16M24 33v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-          </svg>
-        </div>
-        <h3>Dentist Observed Design</h3>
-        <p>Formulated by Dr. Gracie with clinical insight from 20+ years of dentist practice.</p>
-      </div>
-
-      <div class="why-card">
-        <div class="why-icon">
-          <svg viewBox="0 0 48 48" fill="none">
-            <circle cx="24" cy="24" r="8" stroke="currentColor" stroke-width="1.5"/>
-            <path d="M24 6v6M24 36v6M6 24h6M36 24h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-            <path d="M10.1 10.1l4.2 4.2M33.7 33.7l4.2 4.2M10.1 37.9l4.2-4.2M33.7 14.3l4.2-4.2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-          </svg>
-        </div>
-        <h3>Concern Matched</h3>
-        <p>Every set is precisely formulated to target your specific oral health concern — not a generic problem.</p>
-      </div>
-
-      <div class="why-card">
-        <div class="why-icon">
-          <svg viewBox="0 0 48 48" fill="none">
-            <path d="M14 38V24M22 38V12M30 38V20M38 38V28" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-            <path d="M10 38h32" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-          </svg>
-        </div>
-        <h3>Science Backed</h3>
-        <p>Clinical-grade ingredients backed by research and decades of hands-on dentist expertise.</p>
-      </div>
-
-      <div class="why-card">
-        <div class="why-icon">
-          <svg viewBox="0 0 48 48" fill="none">
-            <path d="M16 11h16v4l3 22H13L16 15V11z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-            <path d="M12 15h24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-            <path d="M21 23l2.5 8 4.5-9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-        <h3>Clean &amp; Effective</h3>
-        <p>Free from sulfates, parabens, and harsh chemicals. Just what your mouth truly needs.</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════
-     INGREDIENTS + FAQ
-═══════════════════════════════════ -->
-<section class="sec ingr-sec" id="ingredients">
-  <div class="wrap">
-    <div class="ingr-inner">
-
-      <div class="ingr-left" id="ingr-left">
-        <span class="eyebrow">Approved Ingredient Always</span>
-        <h2>We choose every ingredient with care</h2>
-        <div class="ingr-split">
-          <div>
-            <div class="ingr-badge badge-in">IN</div>
-            <ul class="ingr-list">
-              <li><span class="ic ic-y"></span>Hydroxyapatite</li>
-              <li><span class="ic ic-y"></span>Zinc Citrate</li>
-              <li><span class="ic ic-y"></span>Potassium</li>
-              <li><span class="ic ic-y"></span>Xylitol</li>
-              <li><span class="ic ic-y"></span>Vitamin D-3</li>
-              <li><span class="ic ic-y"></span>Aloe Vera</li>
-            </ul>
-          </div>
-          <div>
-            <div class="ingr-badge badge-out">OUT</div>
-            <ul class="ingr-list">
-              <li><span class="ic ic-n"></span>Sulfates</li>
-              <li><span class="ic ic-n"></span>Parabens</li>
-              <li><span class="ic ic-n"></span>Triclosan</li>
-              <li><span class="ic ic-n"></span>Fluoride</li>
-              <li><span class="ic ic-n"></span>Gluten</li>
-            </ul>
-          </div>
-        </div>
-        <a href="#ingredients" class="arr-link">See all ingredients <span>→</span></a>
-      </div>
-
-      <div class="faq-right" id="faq-right" id="faq">
-        <span class="eyebrow">FAQs</span>
-        <h2>Quick Answers to<br>Common Questions</h2>
-        <div class="faq-list" id="faq">
-          <div class="faq-item">
-            <button class="faq-q" aria-expanded="false">
-              <span>When will Dr. Gracie Oral Care be available?</span>
-              <span class="faq-ic">+</span>
-            </button>
-            <div class="faq-a">
-              <p>We're launching soon. Join the waitlist to be the first to know and receive exclusive founding member pricing and early access.</p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q" aria-expanded="false">
-              <span>Are the products safe for sensitive teeth?</span>
-              <span class="faq-ic">+</span>
-            </button>
-            <div class="faq-a">
-              <p>Yes. Our Barrier Repair Set is specifically formulated for sensitivity and enamel support with gentle, clinically-tested ingredients.</p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q" aria-expanded="false">
-              <span>Are the products suitable for everyone?</span>
-              <span class="faq-ic">+</span>
-            </button>
-            <div class="faq-a">
-              <p>Yes. All formulas are SLS-free, gluten-free, and made with clean, effective ingredients to suit a wide range of oral care needs.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════
-     TESTIMONIALS — CAROUSEL
-═══════════════════════════════════ -->
-<section class="sec testi-sec">
-  <div class="wrap">
-    <span class="eyebrow eyebrow--c">Client Success Stories</span>
-    <h2 class="h2 h2--c">What Our Clients Say</h2>
-  </div>
-
-  <!-- Full-bleed carousel outside wrap -->
-  <div class="testi-carousel-outer" id="testi-outer">
-    <div class="testi-carousel-track" id="testi-track">
-
-      <!-- ── ORIGINAL SET ── -->
-      <div class="tc-card">
-        <div class="tc-stars">★★★★★</div>
-        <p class="tc-quote">"I've been using Dr. Gracie's toothpaste, mouth serum, and oral probiotic together, and the results are amazing. My mouth feels incredible, my gums are healthier, and breath stays fresh all day."</p>
-        <div class="tc-author">
-          <div class="tc-avatar"><img src="uploads/testimony.jpg" alt="Sarah Thompson" loading="lazy"></div>
-          <div class="tc-author-info"><strong>Sarah Thompson</strong><span>5 months ago</span></div>
-        </div>
-      </div>
-
-      <div class="tc-card">
-        <div class="tc-stars">★★★★★</div>
-        <p class="tc-quote">"My sensitivity has dramatically reduced since switching to the Barrier Repair set. I can finally eat cold food without wincing. The quality of these products is genuinely unmatched."</p>
-        <div class="tc-author">
-          <div class="tc-avatar tc-init" style="background:#d4e8f5;color:#3a6890;">JW</div>
-          <div class="tc-author-info"><strong>James Wilson</strong><span>3 months ago</span></div>
-        </div>
-      </div>
-
-      <div class="tc-card">
-        <div class="tc-stars">★★★★★</div>
-        <p class="tc-quote">"The Bright + Balance set transformed my smile. After just 6 weeks I'm getting compliments on how white my teeth look. The serum is especially effective — I'm completely converted."</p>
-        <div class="tc-author">
-          <div class="tc-avatar tc-init" style="background:#e8f5ea;color:#3a6b4a;">EC</div>
-          <div class="tc-author-info"><strong>Emily Chen</strong><span>2 months ago</span></div>
-        </div>
-      </div>
-
-      <div class="tc-card">
-        <div class="tc-stars">★★★★★</div>
-        <p class="tc-quote">"My dentist noticed a significant improvement in my gum health at my last checkup. She was genuinely surprised when I told her about Dr. Gracie's Calm + Defend set. Highly recommend."</p>
-        <div class="tc-author">
-          <div class="tc-avatar tc-init" style="background:#f5eee8;color:#8b6a3e;">MS</div>
-          <div class="tc-author-info"><strong>Maria Santos</strong><span>4 months ago</span></div>
-        </div>
-      </div>
-
-      <div class="tc-card">
-        <div class="tc-stars">★★★★★</div>
-        <p class="tc-quote">"I've tried dozens of oral care brands and nothing comes close to Dr. Gracie. The clinical-grade formulations actually work. This is premium oral care at a level I simply didn't know existed."</p>
-        <div class="tc-author">
-          <div class="tc-avatar tc-init" style="background:#f0edf5;color:#6a4a8b;">DL</div>
-          <div class="tc-author-info"><strong>David Lee</strong><span>6 months ago</span></div>
-        </div>
-      </div>
-
-      <!-- ── DUPLICATE SET for seamless loop ── -->
-      <div class="tc-card">
-        <div class="tc-stars">★★★★★</div>
-        <p class="tc-quote">"I've been using Dr. Gracie's toothpaste, mouth serum, and oral probiotic together, and the results are amazing. My mouth feels incredible, my gums are healthier, and breath stays fresh all day."</p>
-        <div class="tc-author">
-          <div class="tc-avatar"><img src="uploads/testimony.jpg" alt="Sarah Thompson" loading="lazy"></div>
-          <div class="tc-author-info"><strong>Sarah Thompson</strong><span>5 months ago</span></div>
-        </div>
-      </div>
-
-      <div class="tc-card">
-        <div class="tc-stars">★★★★★</div>
-        <p class="tc-quote">"My sensitivity has dramatically reduced since switching to the Barrier Repair set. I can finally eat cold food without wincing. The quality of these products is genuinely unmatched."</p>
-        <div class="tc-author">
-          <div class="tc-avatar tc-init" style="background:#d4e8f5;color:#3a6890;">JW</div>
-          <div class="tc-author-info"><strong>James Wilson</strong><span>3 months ago</span></div>
-        </div>
-      </div>
-
-      <div class="tc-card">
-        <div class="tc-stars">★★★★★</div>
-        <p class="tc-quote">"The Bright + Balance set transformed my smile. After just 6 weeks I'm getting compliments on how white my teeth look. The serum is especially effective — I'm completely converted."</p>
-        <div class="tc-author">
-          <div class="tc-avatar tc-init" style="background:#e8f5ea;color:#3a6b4a;">EC</div>
-          <div class="tc-author-info"><strong>Emily Chen</strong><span>2 months ago</span></div>
-        </div>
-      </div>
-
-      <div class="tc-card">
-        <div class="tc-stars">★★★★★</div>
-        <p class="tc-quote">"My dentist noticed a significant improvement in my gum health at my last checkup. She was genuinely surprised when I told her about Dr. Gracie's Calm + Defend set. Highly recommend."</p>
-        <div class="tc-author">
-          <div class="tc-avatar tc-init" style="background:#f5eee8;color:#8b6a3e;">MS</div>
-          <div class="tc-author-info"><strong>Maria Santos</strong><span>4 months ago</span></div>
-        </div>
-      </div>
-
-      <div class="tc-card">
-        <div class="tc-stars">★★★★★</div>
-        <p class="tc-quote">"I've tried dozens of oral care brands and nothing comes close to Dr. Gracie. The clinical-grade formulations actually work. This is premium oral care at a level I simply didn't know existed."</p>
-        <div class="tc-author">
-          <div class="tc-avatar tc-init" style="background:#f0edf5;color:#6a4a8b;">DL</div>
-          <div class="tc-author-info"><strong>David Lee</strong><span>6 months ago</span></div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════
-     FOOTER CTA
-═══════════════════════════════════ -->
-<section class="foot-cta" id="waitlist">
-  <div class="wrap">
-    <div class="foot-cta-inner">
-      <div class="foot-cta-text" id="foot-cta-text">
-        <h2>Be among the first 5,000.</h2>
-        <p>Get early access, founding member prices, and exclusive care guidance. Join now to secure your founding member status before we open to the public.</p>
-      </div>
-      <form class="foot-form" id="waitlist-form" novalidate>
-        <input type="email" placeholder="Enter your email address" class="foot-input" aria-label="Email address" required>
-        <button type="submit" class="btn btn-gld">Join Waitlist</button>
+        <p class="waitlist-note" id="waitlistNote">No spam. Ever. Just an email when we're live.</p>
       </form>
     </div>
-  </div>
-</section>
 
-</main>
+    <div class="container footer-divider"></div>
 
-<!-- ═══════════════════════════════════
-     FOOTER
-═══════════════════════════════════ -->
-<footer class="site-foot">
-  <div class="wrap">
-    <div class="foot-top">
-      <div>
-        <img src="uploads/logo.png" alt="Dr. Gracie" class="foot-logo">
+    <div class="container footer-cols">
+      <div class="footer-logo">
+        <img src="assets/img/logo-white.png" alt="dr-gracie-logo-footer">
       </div>
-      <nav class="foot-nav" aria-label="Footer navigation">
-        <div class="foot-col">
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#match-sets">Match Sets</a></li>
-            <li><a href="#ingredients">Ingredients</a></li>
-            <li><a href="#our-story">Our Story</a></li>
-            <li><a href="#quiz">Take the Quiz</a></li>
-          </ul>
-        </div>
-        <div class="foot-col">
-          <h4>Important Links</h4>
-          <ul>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Terms of Use</a></li>
-            <li><a href="#">Refund Policy</a></li>
-            <li><a href="#">Contact Us</a></li>
-          </ul>
-        </div>
-        <div class="foot-col">
-          <h4>Follow Us On</h4>
-          <ul>
-            <li><a href="#">Instagram</a></li>
-            <li><a href="#">Facebook</a></li>
-            <li><a href="#">TikTok</a></li>
-            <li><a href="#">Pinterest</a></li>
-          </ul>
-        </div>
-      </nav>
-    </div>
-    <div class="foot-btm">
-      <p>© 2026 Dr. Gracie Oral Care. All rights reserved. Designed with clinical expertise for a healthier smile.</p>
-    </div>
-  </div>
-</footer>
 
-<!-- Mobile Sticky CTA -->
-<div class="mob-sticky" id="mob-sticky" aria-hidden="true">
-  <a href="#waitlist" class="btn btn-dk" style="width:100%; justify-content:center;">Join the Waitlist</a>
-</div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><span class="bullet"></span><a href="#">Home</a></li>
+          <li><span class="bullet"></span><a href="#">Match Sets</a></li>
+          <li><span class="bullet"></span><a href="#">Ingredients</a></li>
+          <li><span class="bullet"></span><a href="#">Our Story</a></li>
+          <li><span class="bullet"></span><a href="#">Find Your Match</a></li>
+        </ul>
+      </div>
 
-<!-- GSAP -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" crossorigin="anonymous"></script>
-<script src="script.js"></script>
+      <div class="footer-col">
+        <h4>Important Links</h4>
+        <ul>
+          <li><span class="bullet"></span><a href="#">Ingredients</a></li>
+          <li><span class="bullet"></span><a href="#">Compliance</a></li>
+          <li><span class="bullet"></span><a href="#">Returns</a></li>
+          <li><span class="bullet"></span><a href="#">Contact</a></li>
+          <li><span class="bullet"></span><a href="#">Privacy</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Follow Us On</h4>
+        <ul class="social-list">
+          <li><a href="#">Facebook<span class="arrow">↗</span></a></li>
+          <li><a href="#">Instagram<span class="arrow">↗</span></a></li>
+          <li><a href="#">Twitter<span class="arrow">↗</span></a></li>
+          <li><a href="#">Tik Tok<span class="arrow">↗</span></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container footer-divider"></div>
+
+    <div class="container footer-base">
+      <p>©2026, <strong>Dr Gracie</strong> All Rights Reserved.</p>
+      <a href="#">Legal Documents</a>
+    </div>
+  </footer>
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="./script.js?v=2"></script>
 </body>
 </html>
