@@ -1,379 +1,381 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dr. Gracie — The Brightness Match Set</title>
-  <meta name="description" content="The Brightness Match Set — your three-step whitening routine, without the damage. Orthodontist-designed and concern-matched." />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dr. Gracie Match Sets — Three clinically-designed oral care routines matched to your concern.">
+  <title>Match Sets — Dr. Gracie</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@1,500;1,600;1,700&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet" />
-
-  <link rel="stylesheet" href="./style.css?v=7" />
 </head>
-<body class="page-matchset">
+<body>
 
-  <!-- Promo bar -->
-  <div class="promo-bar">
-    <p>FREE Shipping on all orders over <strong>$70</strong> &nbsp;-&nbsp; <a href="#">Shop Now</a></p>
-  </div>
+<!-- ═══════════════════════════════════
+     ANNOUNCEMENT BAR
+═══════════════════════════════════ -->
+<div class="announce">
+  Unlock the Future of Oral Wellness with Dr. Gracie —&nbsp;<a href="#waitlist">JOIN THE WAITLIST</a>
+</div>
 
-  <!-- Header -->
-  <header class="site-header" data-screen-label="Match Set">
-    <div class="container">
-      <a href="index.html" class="brand" aria-label="Dr. Gracie">
-        <img src="assets/img/logo.png" alt="dr-gracie-logo" />
+<!-- ═══════════════════════════════════
+     NAVIGATION
+═══════════════════════════════════ -->
+<header class="site-header" id="site-header">
+  <div class="wrap">
+    <nav class="nav">
+      <a href="index.html" class="nav-logo">
+        <img src="uploads/logo.png" alt="Dr. Gracie">
       </a>
-      <nav class="primary-nav" aria-label="Primary">
-        <a href="index.html">Home</a><span class="nav-sep">|</span>
-        <a href="match-set.html" class="active">Match Sets</a><span class="nav-sep">|</span>
-        <a href="ingredients.html">Ingredients</a><span class="nav-sep">|</span>
-        <a href="our-story.html">Our Story</a><span class="nav-sep">|</span>
-        <a href="find-your-match.html">Find Your Match</a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html"              class="nav-link">Home</a></li>
+        <li><a href="index.html#how-it-works" class="nav-link">How It Work</a></li>
+        <li><a href="match-set.html"          class="nav-link" style="color:var(--text);font-weight:500;">Match Sets</a></li>
+        <li><a href="index.html#ingredients"  class="nav-link">Ingredients</a></li>
+        <li><a href="index.html#our-story"    class="nav-link">Our Story</a></li>
+        <li><a href="index.html#faq"          class="nav-link">FAQ's</a></li>
+      </ul>
+      <a href="find-your-match.html" class="btn btn-dk nav-cta">Find Your Match</a>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- ═══════════════════════════════════
+     HERO
+═══════════════════════════════════ -->
+<section class="ms-hero">
+  <div class="wrap" style="padding:0; max-width:100%; width:100%;">
+    <div class="ms-hero-grid" style="max-width:min(1440px,100%); margin-inline:auto;">
+      <div class="ms-hero-content">
+        <h1 class="ms-hero-h1">Personalized Oral Care<br>that matches your<br>biggest concern.</h1>
+        <p class="ms-hero-p">Three orthodontist-designed routines, each formulated for one concern: brightness, sensitivity, or gum health. No one-size-fits-all tube.</p>
+        <div class="ms-hero-btns">
+          <a href="#sets"    class="btn btn-ol">Find Your Match</a>
+          <a href="#waitlist" class="btn btn-ol">Join The Waitlist</a>
+        </div>
+      </div>
+      <div class="ms-hero-media">
+        <img src="uploads/banner-matchset.jpg" alt="Dr. Gracie oral care products on stone with botanicals" loading="eager">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════
+     MATCH SETS — THREE CARDS
+═══════════════════════════════════ -->
+<section class="ms-sets-sec" id="sets">
+  <div class="wrap">
+    <span class="eyebrow eyebrow--c">Three Routines For You</span>
+    <h2 class="h2 h2--c">Match Sets</h2>
+    <p class="sub sub--c">Each set is a complete 3-Step Routine designed to work in harmony</p>
+
+    <div class="ms-cards">
+
+      <!-- CARD 1 — BRIGHTNESS -->
+      <div class="ms-card ms-card--blue" id="brightness">
+        <div class="ms-card-top">
+          <span class="ms-card-tag">Brightness Set</span>
+          <h2>Bright +<br>Balance</h2>
+          <p>For Visible brighter, cleaner smile with long lasting freshness.</p>
+          <ul class="ms-card-symptoms">
+            <li>Dullness</li>
+            <li>Surface Stains</li>
+            <li>Discoloration</li>
+          </ul>
+        </div>
+        <div class="ms-card-img">
+          <img src="uploads/set-01.png" alt="Bright + Balance set — toothpaste, serum and probiotic" loading="lazy">
+        </div>
+        <div class="ms-card-foot">
+          <a href="#brightness" class="ms-card-cta">Explore Brightness Set</a>
+        </div>
+      </div>
+
+      <!-- CARD 2 — BARRIER REPAIR -->
+      <div class="ms-card ms-card--sage" id="barrier">
+        <div class="ms-card-top">
+          <span class="ms-card-tag">Barrier Repair Set</span>
+          <h2>Comfort +<br>Protect</h2>
+          <p>For Visible brighter, cleaner smile with long lasting freshness.</p>
+          <ul class="ms-card-symptoms">
+            <li>Sensitivity</li>
+            <li>Enamel Wear</li>
+            <li>Discomfort</li>
+          </ul>
+        </div>
+        <div class="ms-card-img">
+          <img src="uploads/set-02.png" alt="Comfort + Protect set — barrier repair routine" loading="lazy">
+        </div>
+        <div class="ms-card-foot">
+          <a href="#barrier" class="ms-card-cta">Explore Barrier Repair Set</a>
+        </div>
+      </div>
+
+      <!-- CARD 3 — GUM RESET -->
+      <div class="ms-card ms-card--blush" id="gum">
+        <div class="ms-card-top">
+          <span class="ms-card-tag">Gum Reset Set</span>
+          <h2>Calm +<br>Defend</h2>
+          <p>For Visible brighter, cleaner smile with long lasting freshness.</p>
+          <ul class="ms-card-symptoms">
+            <li>Bleeding Gums</li>
+            <li>Inflammation</li>
+            <li>Gum Sensitivity</li>
+          </ul>
+        </div>
+        <div class="ms-card-img">
+          <img src="uploads/set-03.png" alt="Calm + Defend set — gum reset routine" loading="lazy">
+        </div>
+        <div class="ms-card-foot">
+          <a href="#gum" class="ms-card-cta">Explore Gum Reset Set</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════
+     WHAT'S INSIDE
+═══════════════════════════════════ -->
+<section class="ms-inside-sec">
+  <div class="ms-inside-grid" style="max-width:min(1440px,100%); margin-inline:auto;">
+
+    <!-- LEFT: Product photography -->
+    <div class="ms-inside-img-wrap" id="inside-img">
+      
+    </div>
+
+    <!-- RIGHT: Ingredient breakdown -->
+    <div class="ms-inside-content" id="inside-content">
+      <span class="eyebrow">What's Inside</span>
+      <h2 class="ms-inside-h2">We will tell you exactly<br>what's in it and why it matters.</h2>
+
+      <div class="ingr-grid">
+
+        <!-- nHA -->
+        <div class="ingr-card">
+          <div class="ingr-card-head">
+            <div class="ingr-circle ingr-circle--g">nHA</div>
+            <div>
+              <span class="ingr-name">Nano-Hydroxyapatite</span>
+              <span class="ingr-conc">nHA 10% in toothpaste</span>
+            </div>
+          </div>
+          <p class="ingr-desc">A naturally occurring mineral that makes up 97% of tooth enamel. nHA particles bond to the tooth surface, filling micro-cracks and supporting enamel health. The gold standard in Japanese oral care since the 1980s.</p>
+          <span class="ingr-label">Core active ingredient</span>
+        </div>
+
+        <!-- Zinc Citrate -->
+        <div class="ingr-card">
+          <div class="ingr-card-head">
+            <div class="ingr-circle ingr-circle--b">ZnC</div>
+            <div>
+              <span class="ingr-name">Zinc Citrate</span>
+              <span class="ingr-conc">0.5–1% max in Gum Reset</span>
+            </div>
+          </div>
+          <p class="ingr-desc">Supports a balanced oral environment and freshness from the source. Included at maximum concentration in the Gum Reset set — not just masking, but addressing the underlying tissue environment.</p>
+          <span class="ingr-label">Gum &amp; breath support</span>
+        </div>
+
+        <!-- Potassium Nitrate -->
+        <div class="ingr-card">
+          <div class="ingr-card-head">
+            <div class="ingr-circle ingr-circle--o">KNO</div>
+            <div>
+              <span class="ingr-name">Potassium Nitrate</span>
+              <span class="ingr-conc">5% Barrier Repair focus</span>
+            </div>
+          </div>
+          <p class="ingr-desc">Calms nerve sensitivity by blocking pain signal pathways in dentinal tubules. Included at full 5% in the Barrier Repair set — ideal for those with sensitivity concerns.</p>
+          <span class="ingr-label">Sensitivity comfort</span>
+        </div>
+
+        <!-- Sodium Hyaluronate -->
+        <div class="ingr-card">
+          <div class="ingr-card-head">
+            <div class="ingr-circle ingr-circle--p">SH</div>
+            <div>
+              <span class="ingr-name">Sodium Hyaluronate</span>
+              <span class="ingr-conc">0.1% in Mouth Serum</span>
+            </div>
+          </div>
+          <p class="ingr-desc">The same ingredient in your skincare serum — now for your oral mucosa. Supports mucosal hydration overnight in the leave-in Calm Skin Serum. Think skincare-serum, for your tissues.</p>
+          <span class="ingr-label">Oral skincare proof point</span>
+        </div>
+
+      </div>
+
+      <!-- Badge pills -->
+      <div class="ingr-pills">
+        <span class="ingr-pill ingr-pill--g"><span class="p-dot"></span>Fluoride-free</span>
+        <span class="ingr-pill ingr-pill--g"><span class="p-dot"></span>SLS-free</span>
+        <span class="ingr-pill ingr-pill--g"><span class="p-dot"></span>Alcohol-free serum</span>
+        <span class="ingr-pill ingr-pill--b"><span class="p-dot"></span>RDA &lt; 70 (low abrasivity)</span>
+        <span class="ingr-pill ingr-pill--o"><span class="p-dot"></span>Neutral pH 6.8–7.2</span>
+        <span class="ingr-pill ingr-pill--g"><span class="p-dot"></span>Orthodontist-designed</span>
+        <span class="ingr-pill ingr-pill--d"><span class="p-dot"></span>No peroxide</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════
+     FROM DR. GRACIE — FOUNDER
+═══════════════════════════════════ -->
+<section class="ms-founder-sec">
+  <div class="wrap">
+    <div class="ms-founder-grid">
+
+      <div class="ms-founder-photo" id="ms-founder-img">
+        <img src="uploads/dr-gracie-02.png" alt="Dr. Gracie, Board-Certified Orthodontist" loading="lazy">
+      </div>
+
+      <div id="ms-founder-copy">
+        <span class="eyebrow">From Dr. Gracie</span>
+        <blockquote class="ms-founder-quote">
+          "Your Mouth is Unique<br>Your Care should be too"
+        </blockquote>
+        <p class="ms-founder-body">I created Dr. Gracie Oral Care to bring clinical expertise into everyday routines — so you can feel confident about your oral health, every single day.</p>
+        <div class="ms-founder-stats">
+          <div class="ms-stat">
+            <span class="ms-stat-n">20+</span>
+            <span class="ms-stat-l">Years of Experience</span>
+          </div>
+          <div class="ms-stat">
+            <span class="ms-stat-n">Board</span>
+            <span class="ms-stat-l">Certified orthodontist</span>
+          </div>
+          <div class="ms-stat">
+            <span class="ms-stat-n">nHA</span>
+            <span class="ms-stat-l">Gold standard since 1980s</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════
+     FOOTER CTA
+═══════════════════════════════════ -->
+<section class="ms-foot-cta" id="waitlist">
+  <div class="wrap">
+    <div class="ms-foot-cta-inner">
+      <div class="ms-foot-cta-text" id="ms-cta-text">
+        <h2>Be among the first 5,000.</h2>
+        <p>We're launching mid April 2026. Join early access for first-in-line pricing, a founder note from Dr. Gracie, and 10% off your first Match Set — permanently locked in.</p>
+      </div>
+      <div>
+        <form class="ms-foot-form" id="ms-waitlist-form" novalidate>
+          <input type="email" class="ms-foot-input" placeholder="enter your email name.com" aria-label="Email address" required>
+          <button type="submit" class="btn btn-gld">Join Waitlist</button>
+        </form>
+        <p class="ms-foot-note">No spam. Ever. Just an email when we're live.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ═══════════════════════════════════
+     FOOTER
+═══════════════════════════════════ -->
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <img src="uploads/logo.png" alt="Dr. Gracie" class="foot-logo">
+      </div>
+      <nav class="foot-nav" aria-label="Footer navigation">
+        <div class="foot-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#match-sets">Match Sets</a></li>
+            <li><a href="#ingredients">Ingredients</a></li>
+            <li><a href="#our-story">Our Story</a></li>
+            <li><a href="#quiz">Take the Quiz</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h4>Important Links</h4>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Use</a></li>
+            <li><a href="#">Refund Policy</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h4>Follow Us On</h4>
+          <ul>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">TikTok</a></li>
+            <li><a href="#">Pinterest</a></li>
+          </ul>
+        </div>
       </nav>
-      <button class="menu-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
     </div>
-  </header>
-
-  <!-- ===== HERO ===== -->
-  <section class="ms-hero" aria-label="The Brightness Match Set">
-    <div class="ms-hero-circle" aria-hidden="true"></div>
-    <div class="container ms-hero-grid">
-      <div class="ms-hero-copy">
-        <div class="ms-breadcrumb">
-          <a href="index.html">Home</a> · <a href="index.html#match-sets">Match Sets</a> · <span>Brightness</span>
-        </div>
-        <div class="eyebrow eyebrow-gold">
-          <span class="eyebrow-line"></span>
-          <span>MATCH SET 01 · BRIGHTNESS</span>
-        </div>
-        <h1 class="ms-hero-title">
-          <span>Your whitening routine —</span>
-          <span class="hl-italic">without the damage.</span>
-        </h1>
-        <p class="ms-hero-sub">
-          A three-step system for surface staining and dullness. Brightens
-          gradually with nano-hydroxyapatite — no peroxide, no abrasion,
-          no enamel-stripping side effects.
-        </p>
-
-        <div class="ms-hero-pricing">
-          <div class="ms-price-block">
-            <span class="ms-price-amount">$48</span>
-            <span class="ms-price-strike">$62</span>
-          </div>
-          <span class="ms-price-sub">or subscribe &amp; save 15% · free shipping over $70</span>
-        </div>
-
-        <div class="ms-hero-actions">
-          <button type="button" class="btn-pill btn-gold ms-cta-primary" id="msCta">
-            <span class="btn-label">Add to Cart — $48</span>
-            <span class="btn-sheen" aria-hidden="true"></span>
-          </button>
-          <button type="button" class="btn-pill btn-outline-dark">Subscribe &amp; Save</button>
-        </div>
-
-        <ul class="hero-bullets ms-attributes" aria-label="Attributes">
-          <li>FLUORIDE-FREE</li>
-          <li>SLS-FREE</li>
-          <li>NO PEROXIDE</li>
-          <li>RDA &lt; 70</li>
-        </ul>
-      </div>
-
-      <div class="ms-hero-product">
-        <img src="assets/img/product-result.png" alt="The Brightness Match Set — toothpaste, mouth serum, and ultra-soft brush" />
-      </div>
+    <div class="foot-btm">
+      <p>© 2026 Dr. Gracie Oral Care. All rights reserved. Designed with clinical expertise for a healthier smile.</p>
     </div>
-  </section>
+  </div>
+</footer>
 
-  <!-- ===== INCLUDED PRODUCTS ===== -->
-  <section class="ms-included" aria-label="What's in the set">
-    <div class="container">
-      <div class="sets-head">
-        <p class="eyebrow eyebrow-gold">
-          <span class="eyebrow-line"></span>
-          <span>WHAT'S IN THE SET</span>
-        </p>
-        <h2 class="sets-title">
-          Three products.<br />
-          One concern. Built to work together.
-        </h2>
-      </div>
+<!-- Mobile sticky CTA -->
+<div class="mob-sticky" id="mob-sticky">
+  <a href="#waitlist" class="btn btn-dk" style="width:100%; justify-content:center;">Join the Waitlist</a>
+</div>
 
-      <div class="ms-products-grid">
-        <article class="ms-product-card" data-step="01">
-          <div class="ms-product-image" data-tone="brightness">
-            <img src="assets/img/toothpaste.png" alt="Soft Mint Milk toothpaste" />
-            <span class="ms-product-step">STEP · 01</span>
-          </div>
-          <div class="ms-product-body">
-            <p class="ms-product-eyebrow">CLEAN · MORNING &amp; NIGHT</p>
-            <h3 class="ms-product-name">Soft Mint Milk Toothpaste</h3>
-            <p class="ms-product-desc">10% nano-hydroxyapatite remineralizes enamel and gradually lifts surface stains. Soft mint, no SLS sting, low-abrasion RDA under 70.</p>
-            <ul class="ms-product-features">
-              <li><span>•</span>10% nHA enamel support</li>
-              <li><span>•</span>Soft mint &amp; vanilla finish</li>
-              <li><span>•</span>3.8oz tin tube · recyclable</li>
-            </ul>
-          </div>
-        </article>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" crossorigin="anonymous"></script>
+<script src="script.js"></script>
+<script>
+/* ── Match-set hero — sole owner of these elements ── */
+gsap.registerPlugin(ScrollTrigger);
 
-        <article class="ms-product-card" data-step="02">
-          <div class="ms-product-image" data-tone="brightness-2">
-            <img src="assets/img/mouth-serum.png" alt="Calm Mint Mouth Serum" />
-            <span class="ms-product-step">STEP · 02</span>
-          </div>
-          <div class="ms-product-body">
-            <p class="ms-product-eyebrow">TREAT · NIGHT · DO NOT RINSE</p>
-            <h3 class="ms-product-name">Calm Mint Mouth Serum</h3>
-            <p class="ms-product-desc">A leave-on night treatment. Hyaluronic acid hydrates mucosa, zinc PCA supports the microbiome — overnight, where most of the action happens.</p>
-            <ul class="ms-product-features">
-              <li><span>•</span>0.1% sodium hyaluronate</li>
-              <li><span>•</span>Alcohol-free · pH neutral</li>
-              <li><span>•</span>15ml · ~60 nights</li>
-            </ul>
-          </div>
-        </article>
+gsap.timeline({ delay: 0.15 })
+  .from('.ms-hero-h1',    { y: 44, opacity: 0, duration: 1.0, ease: 'power3.out' })
+  .from('.ms-hero-p',     { y: 26, opacity: 0, duration: 0.7,  ease: 'power2.out' }, '-=0.5')
+  .from('.ms-hero-btns',  { y: 20, opacity: 0, duration: 0.6,  ease: 'power2.out' }, '-=0.4')
+  .from('.ms-hero-media', { x: 60, opacity: 0, duration: 1.1,  ease: 'power3.out' }, '-=0.85');
 
-        <article class="ms-product-card" data-step="03">
-          <div class="ms-product-image" data-tone="brightness-3">
-            <img src="assets/img/oral-probiotic.png" alt="Ultra-Soft Toothbrush" />
-            <span class="ms-product-step">STEP · 03</span>
-          </div>
-          <div class="ms-product-body">
-            <p class="ms-product-eyebrow">CARE · DAILY</p>
-            <h3 class="ms-product-name">Ultra-Soft Matte Toothbrush</h3>
-            <p class="ms-product-desc">Tapered ultra-soft bristles built for gum-line cleaning without abrasion. Matte handle, weighted for control — meant to last a season.</p>
-            <ul class="ms-product-features">
-              <li><span>•</span>Ultra-soft tapered tips</li>
-              <li><span>•</span>Weighted matte handle</li>
-              <li><span>•</span>Replace every 90 days</li>
-            </ul>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
+ScrollTrigger.refresh();
 
-  <!-- ===== ROUTINE TIMELINE ===== -->
-  <section class="ms-routine" aria-label="Your daily routine">
-    <div class="container ms-routine-grid">
-      <div class="ms-routine-copy">
-        <p class="eyebrow eyebrow-gold">
-          <span class="eyebrow-line"></span>
-          <span>YOUR ROUTINE</span>
-        </p>
-        <h2 class="ms-routine-title">
-          <span>Two minutes morning.</span>
-          <span class="hl-italic">Three minutes night.</span>
-        </h2>
-        <p class="ms-routine-sub">
-          Designed so it doesn't feel like work. Most users see a visible
-          tone shift in 4–6 weeks of consistent use.
-        </p>
-      </div>
-      <ol class="ms-routine-steps">
-        <li>
-          <span class="ms-routine-num">01</span>
-          <div>
-            <h4>Morning — Clean (2 min)</h4>
-            <p>Pea-sized Soft Mint Milk on an ultra-soft brush. Two minutes, gentle pressure, gum-line focus.</p>
-          </div>
-        </li>
-        <li>
-          <span class="ms-routine-num">02</span>
-          <div>
-            <h4>Night — Clean (2 min)</h4>
-            <p>Same brushing routine before bed. Spit, don't rinse — let the nHA stay on enamel.</p>
-          </div>
-        </li>
-        <li>
-          <span class="ms-routine-num">03</span>
-          <div>
-            <h4>Night — Serum (1 min)</h4>
-            <p>4–5 drops of Calm Mint Serum, swish for 60 seconds, spit. Do not rinse, do not eat or drink.</p>
-          </div>
-        </li>
-      </ol>
-    </div>
-  </section>
-
-  <!-- ===== BEFORE / AFTER ===== -->
-  <section class="ms-results" aria-label="What to expect">
-    <div class="container ms-results-grid">
-      <div class="ms-results-image">
-        <img src="assets/img/set-01.jpg" alt="The Brightness Match Set styled on a marble shelf" />
-      </div>
-      <div class="ms-results-copy">
-        <p class="eyebrow eyebrow-gold eyebrow-light">
-          <span class="eyebrow-line"></span>
-          <span>WHAT TO EXPECT</span>
-        </p>
-        <h2 class="ms-results-title">
-          <span>Gradual.</span>
-          <span class="hl-italic">Honest.</span>
-          <span>Built to last.</span>
-        </h2>
-        <p class="ms-results-body">
-          We don't promise overnight whitening because that's not how teeth work.
-          What you can expect: a visibly cleaner, fresher tone in 4–6 weeks, and
-          stronger enamel that resists future staining.
-        </p>
-        <div class="ms-results-stats">
-          <div class="ms-stat">
-            <span class="ms-stat-num">4–6</span>
-            <span class="ms-stat-label">Weeks to visible tone shift</span>
-          </div>
-          <div class="ms-stat">
-            <span class="ms-stat-num">97%</span>
-            <span class="ms-stat-label">Of enamel is hydroxyapatite</span>
-          </div>
-          <div class="ms-stat">
-            <span class="ms-stat-num">0</span>
-            <span class="ms-stat-label">Peroxide, fluoride, SLS</span>
-          </div>
-        </div>
-        <button type="button" class="btn-pill btn-gold ms-results-cta">
-          <span class="btn-label">Add Brightness Set — $48</span>
-          <span class="btn-sheen" aria-hidden="true"></span>
-        </button>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== OTHER MATCH SETS ===== -->
-  <section class="ms-other" aria-label="Other match sets">
-    <div class="container">
-      <div class="sets-head ms-other-head">
-        <p class="eyebrow eyebrow-gold">
-          <span class="eyebrow-line"></span>
-          <span>EXPLORE THE OTHER MATCHES</span>
-        </p>
-        <h2 class="sets-title">Different concern? We have a routine for that.</h2>
-      </div>
-      <div class="sets-grid">
-        <article class="set-card" data-tone="barrier">
-          <div class="set-card-head">
-            <div class="set-meta">
-              <p class="set-label">MATCH SET 02</p>
-              <h3 class="set-name">Barrier Repair</h3>
-              <p class="set-tag">"Strengthen what's already there."</p>
-            </div>
-            <div class="set-image"><img src="assets/img/toothpaste.png" alt="Barrier Repair toothpaste" /></div>
-          </div>
-          <ul class="set-includes">
-            <li>Mineral Repair Toothpaste</li>
-            <li>Sensitive Mouth Serum</li>
-            <li>Ultra-Soft Matte Toothbrush</li>
-          </ul>
-          <div class="set-card-foot">
-            <div class="set-price">
-              <span class="set-price-amount">$48</span>
-              <span class="set-price-sub">or subscribe &amp; save 15%</span>
-            </div>
-            <a href="#" class="btn-pill btn-outline-dark set-shop">Shop Set</a>
-          </div>
-        </article>
-
-        <article class="set-card" data-tone="gum">
-          <div class="set-card-head">
-            <div class="set-meta">
-              <p class="set-label">MATCH SET 03</p>
-              <h3 class="set-name">Gum Reset</h3>
-              <p class="set-tag">"Freshness that starts with healthy gums."</p>
-            </div>
-            <div class="set-image"><img src="assets/img/toothpaste.png" alt="Gum Reset toothpaste" /></div>
-          </div>
-          <ul class="set-includes">
-            <li>Gum Reset Toothpaste</li>
-            <li>Calm Mint Mouth Serum</li>
-            <li>Ultra-Soft Matte Toothbrush</li>
-          </ul>
-          <div class="set-card-foot">
-            <div class="set-price">
-              <span class="set-price-amount">$48</span>
-              <span class="set-price-sub">or subscribe &amp; save 15%</span>
-            </div>
-            <a href="#" class="btn-pill btn-outline-dark set-shop">Shop Set</a>
-          </div>
-        </article>
-
-        <article class="set-card" data-tone="brightness" data-not-sure>
-          <div class="set-card-head">
-            <div class="set-meta">
-              <p class="set-label">NOT SURE?</p>
-              <h3 class="set-name">Take the Quiz</h3>
-              <p class="set-tag">"60 seconds. We match the routine to you."</p>
-            </div>
-          </div>
-          <div class="ms-not-sure-body">
-            <p>Four short questions and we'll recommend the right set for your breath, gums, and enamel.</p>
-            <a href="name.html" class="btn-pill btn-gold">Find Your Match</a>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="container footer-top">
-      <div class="waitlist-copy">
-        <h2 class="waitlist-title">Be among the first 500.</h2>
-        <p class="waitlist-sub">We're launching mid-April 2026. Join early access for first-in-line ordering, a founder note from Dr. Gracie, and 15% off your first Match Set — permanently locked in.</p>
-      </div>
-      <form class="waitlist-form" id="waitlistForm" novalidate>
-        <div class="waitlist-field">
-          <input type="email" id="email" placeholder="enteryouremail@name.com" required aria-label="Email address" autocomplete="email" />
-          <button type="submit" class="btn-pill btn-primary waitlist-btn">Join Waitlist</button>
-        </div>
-        <p class="waitlist-note" id="waitlistNote">No spam. Ever. Just an email when we're live.</p>
-      </form>
-    </div>
-    <div class="container footer-divider"></div>
-    <div class="container footer-cols">
-      <div class="footer-logo"><img src="assets/img/logo-white.png" alt="dr-gracie-logo-footer" /></div>
-      <div class="footer-col">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><span class="bullet"></span><a href="index.html">Home</a></li>
-          <li><span class="bullet"></span><a href="match-set.html">Match Sets</a></li>
-          <li><span class="bullet"></span><a href="ingredients.html">Ingredients</a></li>
-          <li><span class="bullet"></span><a href="our-story.html">Our Story</a></li>
-          <li><span class="bullet"></span><a href="name.html">Find Your Match</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Important Links</h4>
-        <ul>
-          <li><span class="bullet"></span><a href="#">Ingredients</a></li>
-          <li><span class="bullet"></span><a href="#">Compliance</a></li>
-          <li><span class="bullet"></span><a href="#">Returns</a></li>
-          <li><span class="bullet"></span><a href="#">Contact</a></li>
-          <li><span class="bullet"></span><a href="#">Privacy</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Follow Us On</h4>
-        <ul class="social-list">
-          <li><a href="#">Facebook<span class="arrow">↗</span></a></li>
-          <li><a href="#">Instagram<span class="arrow">↗</span></a></li>
-          <li><a href="#">Twitter<span class="arrow">↗</span></a></li>
-          <li><a href="#">Tik Tok<span class="arrow">↗</span></a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="container footer-divider"></div>
-    <div class="container footer-base">
-      <p>©2026, <strong>Dr Gracie</strong> All Rights Reserved.</p>
-      <a href="#">Legal Documents</a>
-    </div>
-  </footer>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-  <script src="./script.js?v=7"></script>
+/* Waitlist form */
+const msForm = document.getElementById('ms-waitlist-form');
+if (msForm) {
+  msForm.addEventListener('submit', e => {
+    e.preventDefault();
+    const inp = msForm.querySelector('.ms-foot-input');
+    const btn = msForm.querySelector('button');
+    if (!inp.value.trim() || !inp.value.includes('@')) {
+      inp.style.borderColor = '#c05050';
+      setTimeout(() => { inp.style.borderColor = ''; }, 2000);
+      return;
+    }
+    const orig = btn.textContent;
+    btn.textContent = "You're in! ✓";
+    btn.style.cssText = 'background:#4a7a5c; border-color:#4a7a5c;';
+    inp.value = '';
+    inp.disabled = true;
+    setTimeout(() => { btn.textContent = orig; btn.style.cssText = ''; inp.disabled = false; }, 4000);
+  });
+}
+</script>
 </body>
 </html>
