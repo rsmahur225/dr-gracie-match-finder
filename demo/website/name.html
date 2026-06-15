@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Assessment — Dr. Gracie</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ═══════════════════════════════════
+     ANNOUNCEMENT BAR
+═══════════════════════════════════ -->
+<div class="announce">
+  Unlock the Future of Oral Wellness with Dr. Gracie —&nbsp;<a href="#waitlist">JOIN THE WAITLIST</a>
+</div>
+
+<!-- ═══════════════════════════════════
+     NAVIGATION
+═══════════════════════════════════ -->
+<header class="site-header" id="site-header">
+  <div class="wrap">
+    <nav class="nav">
+      <a href="index.html" class="nav-logo">
+        <img src="uploads/logo.png" alt="Dr. Gracie">
+      </a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html"        class="nav-link">Home</a></li>
+        <li><a href="#how-it-works" class="nav-link">How It Works</a></li>
+        <li><a href="match-set.html"  class="nav-link">Match Sets</a></li>
+        <li><a href="#ingredients" class="nav-link">Ingredients</a></li>
+        <li><a href="#our-story"   class="nav-link">Our Story</a></li>
+        <li><a href="#faq"         class="nav-link">FAQs</a></li>
+      </ul>
+      <a href="find-your-match.html" class="btn btn-dk nav-cta">Find Your Match</a>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<main id="quiz-main">
+
+<!-- ══════════════════════════════════════════
+     SCREEN 1 — NAME ENTRY
+══════════════════════════════════════════ -->
+<section class="q-screen active" id="sc-name" data-screen-label="Name Entry">
+  <div class="name-stage">
+    <div class="wrap">
+      <div class="name-layout">
+
+        <!-- LEFT: Dr. Gracie -->
+        <div class="name-dr" aria-hidden="true">
+          <img src="uploads/name-gracie-01.png"
+               alt="Dr. Gracie"
+               onerror="this.src='uploads/dr-gracie-01.png'"
+               loading="eager">
+        </div>
+
+        <!-- RIGHT: Form -->
+        <div class="name-content" id="nameContent">
+          <div class="q-eyebrow-soft">Before Proceeding Anything Further We Need Some Details About You</div>
+          <h2 class="name-h2">What name do you prefer?</h2>
+          <input
+            type="text"
+            id="nameInput"
+            class="q-input"
+            placeholder="Enter Your Name"
+            autocomplete="given-name"
+            aria-label="Your preferred name"
+            maxlength="60"
+          >
+          <button class="btn-pill-blue" onclick="Quiz.submitName()" type="button">Continue</button>
+        </div>
+
+      </div>
+    </div>
+
+    <svg class="q-wave" viewBox="0 0 1440 260" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M-20 125 C 120 65 300 138 520 100 C 700 68 880 60 1080 86 C 1250 108 1370 128 1460 108 L 1460 260 L -20 260 Z" fill="rgba(20,32,108,.78)"/>
+      <path d="M-20 158 C 140 108 340 158 570 135 C 760 116 960 112 1160 132 C 1320 148 1410 155 1460 145 L 1460 260 L -20 260 Z" fill="rgba(16,26,90,.6)"/>
+      <path d="M-20 185 C 160 150 370 184 610 168 C 810 154 1010 151 1210 166 C 1360 178 1430 183 1460 176 L 1460 260 L -20 260 Z" fill="rgba(12,20,76,.4)"/>
+    </svg>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     SCREEN 2 — QUIZ (4 questions, dynamic)
+══════════════════════════════════════════ -->
+<section class="q-screen" id="sc-quiz" data-screen-label="Quiz">
+  <div class="quiz-stage">
+    <div class="wrap quiz-inner">
+
+      <!-- Progress bar card -->
+      <div class="prog-wrap">
+        <div class="prog-card">
+          <div class="prog-top">
+            <span class="prog-label" id="progLabel">Question 01</span>
+            <button class="prog-back" onclick="Quiz.back()" type="button">Go Back</button>
+          </div>
+          <div class="prog-track">
+            <div class="prog-fill" id="progFill" style="width:25%">
+              <div class="prog-badge" id="progBadge">25%</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dr. Gracie + question layout -->
+      <div class="q-layout">
+        <div class="q-dr" aria-hidden="true">
+          <img src="uploads/question-gracie-02.png"
+               alt="Dr. Gracie"
+               onerror="this.src='uploads/dr-gracie-01.png'"
+               loading="lazy">
+        </div>
+        <div class="q-col" id="qContent">
+          <!-- Rendered by Quiz engine -->
+        </div>
+      </div>
+
+    </div>
+
+    <svg class="q-wave" viewBox="0 0 1440 260" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M-20 125 C 120 65 300 138 520 100 C 700 68 880 60 1080 86 C 1250 108 1370 128 1460 108 L 1460 260 L -20 260 Z" fill="rgba(20,32,108,.78)"/>
+      <path d="M-20 158 C 140 108 340 158 570 135 C 760 116 960 112 1160 132 C 1320 148 1410 155 1460 145 L 1460 260 L -20 260 Z" fill="rgba(16,26,90,.6)"/>
+      <path d="M-20 185 C 160 150 370 184 610 168 C 810 154 1010 151 1210 166 C 1360 178 1430 183 1460 176 L 1460 260 L -20 260 Z" fill="rgba(12,20,76,.4)"/>
+    </svg>
+  </div>
+</section>
+
+</main>
+
+<!-- ═══════════════════════════════════
+     FOOTER CTA
+═══════════════════════════════════ -->
+<section class="foot-cta" id="waitlist">
+  <div class="wrap">
+    <div class="foot-cta-inner">
+      <div class="foot-cta-text" id="foot-cta-text">
+        <h2>Be among the first 5,000.</h2>
+        <p>Get early access, founding member prices, and exclusive care guidance. Join now to secure your founding member status before we open to the public.</p>
+      </div>
+      <form class="foot-form" id="waitlist-form" novalidate>
+        <input type="email" placeholder="Enter your email address" class="foot-input" aria-label="Email address" required>
+        <button type="submit" class="btn btn-gld">Join Waitlist</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════
+     FOOTER
+═══════════════════════════════════ -->
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <img src="uploads/logo.png" alt="Dr. Gracie" class="foot-logo">
+      </div>
+      <nav class="foot-nav" aria-label="Footer navigation">
+        <div class="foot-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#match-sets">Match Sets</a></li>
+            <li><a href="#ingredients">Ingredients</a></li>
+            <li><a href="#our-story">Our Story</a></li>
+            <li><a href="#quiz">Take the Quiz</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h4>Important Links</h4>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Use</a></li>
+            <li><a href="#">Refund Policy</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h4>Follow Us On</h4>
+          <ul>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">TikTok</a></li>
+            <li><a href="#">Pinterest</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <div class="foot-btm">
+      <p>© 2026 Dr. Gracie Oral Care. All rights reserved. Designed with clinical expertise for a healthier smile.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════
+     QUIZ ENGINE
+═══════════════════════════════════ -->
+<script>
+/* ───────────────────────────────────────
+   DR. GRACIE — QUIZ ENGINE
+   4 Questions → result.html
+   Persists state in localStorage
+─────────────────────────────────────── */
+
+const QUESTIONS = [
+  {
+    heading: "What's your biggest oral concern right now?",
+    opts: [
+      { title: 'Breath & Freshness',       sub: "Worried about bad breath or odor that don't go away.",  s:{b:0,r:0,g:3} },
+      { title: 'Gum Health',               sub: 'Bleeding when flossing or gum sensitivity.',              s:{b:0,r:0,g:3} },
+      { title: 'Brighter Teeth',           sub: 'Dull enamel or surface staining.',                        s:{b:3,r:0,g:0} },
+      { title: 'Sensitivity & Protection', sub: 'Cold water hurts or enamel feels thin.',                  s:{b:0,r:3,g:0} }
+    ]
+  },
+  {
+    heading: 'How would you describe your smile right now?',
+    opts: [
+      { title: 'Dull or stained',         sub: "My teeth look less radiant than I'd like.",               s:{b:2,r:0,g:0} },
+      { title: 'Sensitive or fragile',    sub: 'Thin enamel or pain with temperature changes.',            s:{b:0,r:2,g:0} },
+      { title: 'Puffy or irritated gums', sub: 'My gums feel tender or look inflamed.',                    s:{b:0,r:0,g:2} },
+      { title: 'Persistent bad breath',   sub: "Fresh breath doesn't last, no matter what I try.",        s:{b:0,r:0,g:2} }
+    ]
+  },
+  {
+    heading: 'How often do you experience tooth sensitivity?',
+    opts: [
+      { title: 'Rarely or never',  sub: "Hot and cold don't bother me at all.",                          s:{b:1,r:0,g:1} },
+      { title: 'Occasionally',     sub: 'Mild twinges now and then with certain foods.',                  s:{b:1,r:1,g:0} },
+      { title: 'Often',            sub: 'Cold or hot drinks regularly cause discomfort.',                 s:{b:0,r:2,g:0} },
+      { title: 'Very frequently',  sub: 'Sensitivity significantly impacts my daily life.',               s:{b:0,r:3,g:0} }
+    ]
+  },
+  {
+    heading: 'What does your ideal smile look like?',
+    opts: [
+      { title: 'Visibly whiter & brighter',   sub: 'A radiant smile that turns heads.',                   s:{b:3,r:0,g:0} },
+      { title: 'Strong & protected enamel',   sub: 'Resilient teeth and lasting comfort.',                 s:{b:0,r:3,g:0} },
+      { title: 'Healthy gums & fresh breath', sub: 'A clean, confident, odour-free smile every day.',      s:{b:0,r:0,g:3} },
+      { title: 'Complete oral wellness',      sub: 'A balanced, healthy mouth in every dimension.',        s:{b:1,r:1,g:1} }
+    ]
+  }
+];
+
+const TOTAL = QUESTIONS.length;
+const STORE = 'drg_quiz_v2';
+
+let _name    = '';
+let _idx     = 0;
+let _answers = new Array(TOTAL).fill(-1);
+
+/* ── Persistence ── */
+function _save(screen) {
+  try {
+    localStorage.setItem(STORE, JSON.stringify({ screen, name: _name, idx: _idx, answers: _answers }));
+  } catch(e) {}
+}
+function _load() {
+  try {
+    const d = JSON.parse(localStorage.getItem(STORE) || 'null');
+    if (!d) return null;
+    _name    = d.name    || '';
+    _idx     = typeof d.idx === 'number' ? d.idx : 0;
+    _answers = Array.isArray(d.answers) ? d.answers : new Array(TOTAL).fill(-1);
+    return d.screen || 'name';
+  } catch(e) { return null; }
+}
+
+/* ── Scroll to top of section ── */
+function _scrollToTop(el) {
+  const hdr = document.getElementById('site-header');
+  const off = (hdr ? hdr.offsetHeight : 80) + 8;
+  const top = el.getBoundingClientRect().top + window.scrollY - off;
+  window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+}
+
+/* ── Show a screen ── */
+function _show(id) {
+  document.querySelectorAll('.q-screen').forEach(s => s.classList.remove('active'));
+  const el = document.getElementById('sc-' + id);
+  if (!el) return;
+  el.classList.add('active');
+  /* Animate the content panel */
+  const panel = el.querySelector('.name-content, .q-col');
+  if (panel) {
+    panel.classList.remove('animate-in');
+    void panel.offsetWidth;
+    panel.classList.add('animate-in');
+  }
+  requestAnimationFrame(() => _scrollToTop(el));
+}
+
+/* ── Update progress bar ── */
+function _setProgress(idx) {
+  const pct   = Math.round((idx + 1) / TOTAL * 100);
+  const fill  = document.getElementById('progFill');
+  const badge = document.getElementById('progBadge');
+  const label = document.getElementById('progLabel');
+  if (fill)  fill.style.width  = pct + '%';
+  if (badge) badge.textContent  = pct + '%';
+  if (label) label.textContent  = 'Question ' + String(idx + 1).padStart(2, '0');
+}
+
+/* ── Render a question ── */
+function _renderQ(idx, dir) {
+  const q   = QUESTIONS[idx];
+  const sel = _answers[idx];
+  const col = document.getElementById('qContent');
+  if (!col) return;
+
+  /* Fade out */
+  col.style.transition = 'opacity .14s ease, transform .14s ease';
+  col.style.opacity    = '0';
+  col.style.transform  = dir === 'back' ? 'translateX(-10px)' : 'translateX(10px)';
+
+  setTimeout(() => {
+    const isLast  = idx === TOTAL - 1;
+    const eyebrow = 'Question ' + String(idx + 1).padStart(2, '0');
+
+    const optsHtml = q.opts.map((o, i) => `
+      <button
+        class="opt-btn${sel === i ? ' sel' : ''}"
+        onclick="Quiz.pick(${idx},${i})"
+        type="button"
+      >
+        <div class="opt-title">${o.title}</div>
+        <div class="opt-sub">${o.sub}</div>
+      </button>
+    `).join('');
+
+    col.innerHTML = `
+      <div class="q-eyebrow-num">${eyebrow}</div>
+      <h2 class="q-heading">${q.heading}</h2>
+      <div class="opts-grid" id="optsGrid">${optsHtml}</div>
+      <div class="q-actions">
+        <button class="btn-pill-blue" onclick="Quiz.next()" type="button">
+          ${isLast ? 'See My Results' : 'Next Question'}
+        </button>
+      </div>
+    `;
+
+    /* Fade in */
+    col.style.transition = 'opacity .28s ease, transform .28s ease';
+    col.style.transform  = 'translateX(0)';
+    col.style.opacity    = '1';
+
+    _setProgress(idx);
+  }, 155);
+}
+
+/* ── Compute winning kit ── */
+function _winner() {
+  const s = { b: 0, r: 0, g: 0 };
+  QUESTIONS.forEach((q, i) => {
+    if (_answers[i] !== -1) {
+      const sc = q.opts[_answers[i]].s;
+      s.b += sc.b; s.r += sc.r; s.g += sc.g;
+    }
+  });
+  let w = 'b';
+  if (s.r > s[w]) w = 'r';
+  if (s.g > s[w]) w = 'g';
+  return w;
+}
+
+/* ── Public API ── */
+const Quiz = {
+
+  submitName() {
+    const inp = document.getElementById('nameInput');
+    const val = inp ? inp.value.trim() : '';
+    if (!val) {
+      if (inp) {
+        inp.classList.add('err');
+        inp.focus();
+        setTimeout(() => inp.classList.remove('err'), 1800);
+      }
+      return;
+    }
+    _name    = val;
+    _idx     = 0;
+    _answers = new Array(TOTAL).fill(-1);
+    _save('quiz');
+    _renderQ(0, 'fwd');
+    _show('quiz');
+  },
+
+  pick(qIdx, optIdx) {
+    _answers[qIdx] = optIdx;
+    document.querySelectorAll('.opt-btn').forEach((el, i) => {
+      el.classList.toggle('sel', i === optIdx);
+    });
+    _save('quiz');
+  },
+
+  next() {
+    if (_answers[_idx] === -1) {
+      const grid = document.getElementById('optsGrid');
+      if (grid) {
+        grid.classList.remove('shake');
+        void grid.offsetWidth;
+        grid.classList.add('shake');
+      }
+      return;
+    }
+    if (_idx < TOTAL - 1) {
+      _idx++;
+      _renderQ(_idx, 'fwd');
+      _save('quiz');
+    } else {
+      /* Store result and navigate */
+      try {
+        localStorage.setItem('drg_result_v2', JSON.stringify({
+          winner: _winner(),
+          name:   _name
+        }));
+      } catch(e) {}
+      window.location.href = 'result.html';
+    }
+  },
+
+  back() {
+    if (_idx > 0) {
+      _idx--;
+      _renderQ(_idx, 'back');
+      _save('quiz');
+    } else {
+      /* Return to name entry screen */
+      _show('name');
+      _save('name');
+    }
+  }
+};
+
+/* ── Nav + burger ── */
+const hdr    = document.getElementById('site-header');
+const burger = document.getElementById('burger');
+const nLinks = document.getElementById('nav-links');
+
+window.addEventListener('scroll', () => {
+  hdr.classList.toggle('scrolled', window.scrollY > 50);
+}, { passive: true });
+
+burger.addEventListener('click', () => {
+  const open = nLinks.classList.toggle('open');
+  burger.setAttribute('aria-expanded', String(open));
+});
+
+/* ── Waitlist form ── */
+const wlForm = document.getElementById('wlForm');
+if (wlForm) {
+  wlForm.addEventListener('submit', e => {
+    e.preventDefault();
+    const inp = wlForm.querySelector('.ms-foot-input');
+    const btn = wlForm.querySelector('button[type="submit"]');
+    if (!inp.value.includes('@')) {
+      inp.style.borderColor = 'rgba(176,80,80,.6)';
+      setTimeout(() => inp.style.borderColor = '', 2200);
+      return;
+    }
+    btn.textContent = "You're on the list ✓";
+    btn.style.background = '#4a7a5c';
+    inp.value = ''; inp.disabled = true;
+    setTimeout(() => {
+      btn.textContent = 'Join Waitlist';
+      btn.style.background = '';
+      inp.disabled = false;
+    }, 4500);
+  });
+}
+
+/* ── Boot ── */
+document.addEventListener('DOMContentLoaded', () => {
+  const saved = _load();
+
+  /* Restore name input */
+  const inp = document.getElementById('nameInput');
+  if (inp) {
+    if (_name) inp.value = _name;
+    inp.addEventListener('keydown', e => { if (e.key === 'Enter') Quiz.submitName(); });
+  }
+
+  /* Restore position */
+  if (saved === 'quiz') {
+    _renderQ(_idx, 'fwd');
+    _show('quiz');
+  }
+  /* else: name screen is already active */
+});
+</script>
+
+</body>
+</html>

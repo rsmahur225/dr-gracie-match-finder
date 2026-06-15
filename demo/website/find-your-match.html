@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Get your personalized oral care routine from Dr. Gracie in 60 seconds.">
+  <title>Find Your Match — Dr. Gracie</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ═══════════════════════════════════
+     ANNOUNCEMENT BAR
+═══════════════════════════════════ -->
+<div class="announce">
+  Unlock the Future of Oral Wellness with Dr. Gracie —&nbsp;<a href="#waitlist">JOIN THE WAITLIST</a>
+</div>
+
+<!-- ═══════════════════════════════════
+     NAVIGATION
+═══════════════════════════════════ -->
+<header class="site-header" id="site-header">
+  <div class="wrap">
+    <nav class="nav">
+      <a href="index.html" class="nav-logo">
+        <img src="uploads/logo.png" alt="Dr. Gracie">
+      </a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html"        class="nav-link">Home</a></li>
+        <li><a href="#how-it-works" class="nav-link">How It Works</a></li>
+        <li><a href="match-set.html"  class="nav-link">Match Sets</a></li>
+        <li><a href="#ingredients" class="nav-link">Ingredients</a></li>
+        <li><a href="#our-story"   class="nav-link">Our Story</a></li>
+        <li><a href="#faq"         class="nav-link">FAQs</a></li>
+      </ul>
+      <a href="find-your-match.html" class="btn btn-dk nav-cta">Find Your Match</a>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<main>
+<!-- HERO — Dr. Gracie image set inline so URL resolves from this HTML page -->
+<section class="fym-hero" data-screen-label="Find Your Match Hero">
+  <div class="fym-circle" aria-hidden="true"></div>
+
+  <div class="wrap">
+    <div class="fym-grid">
+
+      <!-- LEFT: content -->
+      <div class="fym-content">
+        <div class="fym-eyebrow">Personalized Oral Care Assessment</div>
+        <h1 class="fym-h1">
+          Get Your Personalized<br>Smile Routine in
+          <em>60 Seconds!</em>
+        </h1>
+        <p class="fym-sub">Answer a few questions and Dr. Gracie will recommend the right routine for your breath, gums, and teeth.</p>
+        <a href="name.html" class="fym-btn">Start My Assessment</a>
+        <div class="fym-trust">
+          <span>Fluoride-Free</span>
+          <span>SLS-Free</span>
+          <span>NHA-Powered</span>
+        </div>
+      </div>
+
+      <!-- RIGHT: Dr. Gracie -->
+      <div class="fym-media" aria-hidden="true">
+        <img src="uploads/dr-gracie-01.png" alt="" class="fym-dr-img" loading="eager"
+             onerror="this.src='uploads/dr-gracie-02.png'">
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Wave ribbons -->
+  <svg class="fym-wave" viewBox="0 0 1440 260" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M-20 125 C 120 65 300 138 520 100 C 700 68 880 60 1080 86 C 1250 108 1370 128 1460 108 L 1460 260 L -20 260 Z" fill="rgba(20,32,108,.78)"/>
+    <path d="M-20 158 C 140 108 340 158 570 135 C 760 116 960 112 1160 132 C 1320 148 1410 155 1460 145 L 1460 260 L -20 260 Z" fill="rgba(16,26,90,.6)"/>
+    <path d="M-20 185 C 160 150 370 184 610 168 C 810 154 1010 151 1210 166 C 1360 178 1430 183 1460 176 L 1460 260 L -20 260 Z" fill="rgba(12,20,76,.4)"/>
+  </svg>
+</section>
+</main>
+
+<!-- ═══════════════════════════════════
+     FOOTER CTA
+═══════════════════════════════════ -->
+<section class="foot-cta" id="waitlist">
+  <div class="wrap">
+    <div class="foot-cta-inner">
+      <div class="foot-cta-text" id="foot-cta-text">
+        <h2>Be among the first 5,000.</h2>
+        <p>Get early access, founding member prices, and exclusive care guidance. Join now to secure your founding member status before we open to the public.</p>
+      </div>
+      <form class="foot-form" id="waitlist-form" novalidate>
+        <input type="email" placeholder="Enter your email address" class="foot-input" aria-label="Email address" required>
+        <button type="submit" class="btn btn-gld">Join Waitlist</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════
+     FOOTER
+═══════════════════════════════════ -->
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <img src="uploads/logo.png" alt="Dr. Gracie" class="foot-logo">
+      </div>
+      <nav class="foot-nav" aria-label="Footer navigation">
+        <div class="foot-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#match-sets">Match Sets</a></li>
+            <li><a href="#ingredients">Ingredients</a></li>
+            <li><a href="#our-story">Our Story</a></li>
+            <li><a href="#quiz">Take the Quiz</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h4>Important Links</h4>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Use</a></li>
+            <li><a href="#">Refund Policy</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h4>Follow Us On</h4>
+          <ul>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">TikTok</a></li>
+            <li><a href="#">Pinterest</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <div class="foot-btm">
+      <p>© 2026 Dr. Gracie Oral Care. All rights reserved. Designed with clinical expertise for a healthier smile.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+const hdr = document.getElementById('site-header');
+const burger = document.getElementById('burger');
+const nLinks = document.getElementById('nav-links');
+window.addEventListener('scroll', () => hdr.classList.toggle('scrolled', window.scrollY > 50), { passive: true });
+burger.addEventListener('click', () => {
+  const open = nLinks.classList.toggle('open');
+  burger.setAttribute('aria-expanded', String(open));
+});
+const wlForm = document.getElementById('wlForm');
+if (wlForm) {
+  wlForm.addEventListener('submit', e => {
+    e.preventDefault();
+    const inp = wlForm.querySelector('.ms-foot-input');
+    const btn = wlForm.querySelector('button[type="submit"]');
+    if (!inp.value.includes('@')) { inp.style.borderColor='rgba(176,80,80,.6)'; setTimeout(()=>inp.style.borderColor='',2200); return; }
+    btn.textContent="You're on the list ✓"; btn.style.background='#4a7a5c';
+    inp.value=''; inp.disabled=true;
+    setTimeout(()=>{ btn.textContent='Join Waitlist'; btn.style.background=''; inp.disabled=false; }, 4500);
+  });
+}
+</script>
+</body>
+</html>
